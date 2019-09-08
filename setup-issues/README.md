@@ -35,7 +35,43 @@ pip uninstall numpy
 pip install --upgrade numpy==1.16.1
 ```
 
+### Check Python used in RStudio
+
+Execute the following command in the RStudio console:
+```
+library(reticulate)
+py_config()
+```
+
+Below is the corresponding Python information:
+```
+python:         /Users/zhaoshu/.virtualenvs/r-reticulate/bin/python
+libpython:      /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/config-3.6m-darwin/libpython3.6.dylib
+pythonhome:     /Library/Frameworks/Python.framework/Versions/3.6:/Library/Frameworks/Python.framework/Versions/3.6
+version:        3.6.2 (v3.6.2:5fd33b5926, Jul 16 2017, 20:11:06)  [GCC 4.2.1 (Apple Inc. build 5666) (dot 3)]
+numpy:          /Users/zhaoshu/.virtualenvs/r-reticulate/lib/python3.6/site-packages/numpy
+numpy_version:  1.17.1
+tensorflow:     /Users/zhaoshu/.virtualenvs/r-reticulate/lib/python3.6/site-packages/tensorflow
+
+python versions found: 
+ /Users/zhaoshu/.virtualenvs/r-reticulate/bin/python
+ /usr/bin/python
+ /usr/local/bin/python
+ /usr/local/bin/python3
+```
+
+To downgrade RStudio's python's numpy version, "/Users/zhaoshu/.virtualenvs/r-reticulate/bin/pip" should be used, instead of the generic pip command in Mac OS, and RStudio's python's site packages' path is "/Users/zhaoshu/.virtualenvs/r-reticulate/lib/python3.6/site-packages".
+
+To check the current numpy version, execute the following command:
+```
+/Users/zhaoshu/.virtualenvs/r-reticulate/bin/
+
+>> import numpy
+>> print (numpy.__version__)
+```
+
 ## References
 
 * https://github.com/tensorflow/tensorflow/issues/10779
 * https://github.com/rstudio/keras/issues/765
+* https://rstudio.github.io/reticulate/articles/versions.html
