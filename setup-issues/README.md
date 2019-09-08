@@ -64,7 +64,7 @@ To downgrade RStudio's python's numpy version, "/Users/zhaoshu/.virtualenvs/r-re
 
 To check the current numpy version, execute the following command:
 ```
-/Users/zhaoshu/.virtualenvs/r-reticulate/bin/
+/Users/zhaoshu/.virtualenvs/r-reticulate/bin/python
 
 >> import numpy
 >> print (numpy.__version__)
