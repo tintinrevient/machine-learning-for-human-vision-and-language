@@ -26,13 +26,13 @@ The solutions are as the following two:
 
 1. install the current tensorflow nightly version instead (this already has the above fix):
 ```
-install_tensorflow(version="nightly")
+> install_tensorflow(version="nightly")
 ```
 
 2. downgrade numpy to a version below 1.16.3:
 ```
-pip uninstall numpy
-pip install --upgrade numpy==1.16.1
+$ pip uninstall numpy
+$ pip install --upgrade numpy==1.16.1
 ```
 
 ### Check Python used in RStudio
@@ -64,10 +64,22 @@ To downgrade RStudio's python's numpy version, "/Users/zhaoshu/.virtualenvs/r-re
 
 To check the current numpy version, execute the following command:
 ```
-/Users/zhaoshu/.virtualenvs/r-reticulate/bin/python
+$ /Users/zhaoshu/.virtualenvs/r-reticulate/bin/python
 
->> import numpy
->> print (numpy.__version__)
+>>> import numpy
+>>> print (numpy.__version__)
+```
+
+### Python - PIL.Image
+
+The error message reads as below:
+```
+ImportError: Could not import PIL.Image. The use of `load_img` requires PIL.
+```
+
+The solution is to execute the command as below to install pillow:
+```
+$ /Users/zhaoshu/.virtualenvs/r-reticulate/bin/pip install pillow
 ```
 
 ## References
