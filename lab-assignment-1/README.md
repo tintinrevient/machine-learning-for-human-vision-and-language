@@ -112,7 +112,7 @@ This accuracy is sufficient, based on the following reasons:
 
 #### Question 15: Describe the principles of overfitting and how dropout can reduce this.
 
-The principle of overfitting is the imbalance between optimization and generalization for the model over the training history. As the learning progresses, the model gains optimization which aligns too well with the training set, while it loses generalization to predict the unforseen data from the validation set.
+The principle of overfitting is the tradeoff between optimization and generalization for the model over the training history. As the learning progresses, the model gains optimization which aligns too well with the training set, while it loses generalization to predict the unforseen data from the validation set.
 
 The dropout can remove a certain fraction of the features from the output during the training. Thus the model will not align too closely with the training set, as these arbitary noises are introduced into the training set.
 
