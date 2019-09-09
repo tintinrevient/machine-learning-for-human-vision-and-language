@@ -119,8 +119,17 @@ The dropout can remove a certain fraction of the features from the output during
 
 #### Question 16: How does the training history differ from the previous (convolutional) model, for both the training and validation sets, and for the time taken to run each model epoch?
 
+For both the training set and the validation set, the accurary keeps upgrading. For the training set, the accurary witnesses a steep line from 0.9039 to 0.9862. And for the validation set, it increases slightly from 0.9781 to 0.9889. What differs from the previous model is that the model reaches a higher accurary for the validation set than for the training set.
 
+The training history is as below for this new model:
+![plot-of-history-4](./pix/plot-of-history-4.png)
+
+For the time taken to run the model, the previous model takes 80 seconds per epoch on average, compared with this model's 103 seconds per epoch on average.
 
 
 #### Question 17: What does this tell us about the generalisation of the two models? 
+
+It tells that the previous model without dropout is less general than the current model with dropout. It can be deduced that the dropout layer can increase generalization and prevent overfitting during the training of models.
+
+
 
