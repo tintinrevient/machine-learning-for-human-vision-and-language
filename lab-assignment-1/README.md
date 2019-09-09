@@ -124,7 +124,7 @@ For both the training set and the validation set, the accurary keeps upgrading. 
 The training history is as below for this new model:
 ![plot-of-history-4](./pix/plot-of-history-4.png)
 
-For the time taken to run the model, the previous model takes 80 seconds per epoch on average, compared with this model's 103 seconds per epoch on average.
+For the time taken to train the model, the previous model takes 80 seconds per epoch on average, compared with this model's 103 seconds per epoch on average.
 
 
 #### Question 17: What does this tell us about the generalisation of the two models? 
