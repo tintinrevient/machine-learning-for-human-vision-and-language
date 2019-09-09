@@ -1,5 +1,4 @@
 ## Lab assignment 1
-### Group: Luka, Shu
 
 
 #### Question 1: Can you think of another application where automatic recognition of hand-written
