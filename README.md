@@ -3,10 +3,10 @@
 ### Overview
 
 The content comes into the following four categories:
-1. books: reference books
-2. lab assignments
-3. lab assignment reference points: information refined and summarized after each lab assignment
-4. setup issues: issues and their corresponding solutions while setting up the local environment
+1. [books](https://github.com/tintinrevient/machine-learning-for-human-vision-and-language/tree/master/books): reference books
+2. lab assignments: e.g. lab-assignment-1, lab-assignment-2, etc...
+3. [lab assignment reference points](https://github.com/tintinrevient/machine-learning-for-human-vision-and-language/tree/master/lab-assignment-reference-point): information refined and summarized after each lab assignment
+4. [setup issues](https://github.com/tintinrevient/machine-learning-for-human-vision-and-language/tree/master/setup-issues): issues and their corresponding solutions while setting up the local environment
 
 
 ### How to update lab assignments
