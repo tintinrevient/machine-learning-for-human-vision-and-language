@@ -1,8 +1,7 @@
 ## Lab assignment 1
 
 
-#### Question 1: Can you think of another application where automatic recognition of hand-written
-numbers would be useful?
+#### Question 1: Can you think of another application where automatic recognition of hand-written numbers would be useful?
 
 1. The OCR (Optical Character Recognition) system which can recognize the numeric entries in the application forms filled up by hand in any bank branch, e.g. the applicant's bank account. And with the help of OCR, the paper forms can be automatically scanned and logged in the database.
 
