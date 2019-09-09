@@ -45,7 +45,7 @@ It tells that the generalisation of the model is not good, as the model is over-
 
 The model's accuracy is 0.9217.
 
-The model's loss is 0.290271
+The model's loss is 0.290271.
 
 
 #### Question 6: Discuss whether this accuracy is sufficient for some uses of automatic hand-written digit classification. 
@@ -82,4 +82,45 @@ The new model's accuracy on the test set is 0.9814, which is much higher than th
 It is because the generalization of this new model is good, so it can predict more accurately for the unknown patterns in the test set.
 
 
-#### Question 11: 
+#### Question 11: Plot the training history and add it to your answers.
+
+The training history is as below:
+![plot-of-history-3](./pix/plot-of-history-3.png)
+
+
+#### Question 12: How does the training history differ from the previous model, for the training and validation sets? What does this tell us about the generalisation of the model?
+
+For both the training set and the validation set, the training history remains almost the same as that of the previous model. What is slightly different is for the validation set. The accurary for the validation set starts at 0.9809 from epoch 1, and it fluctuates slightly since then around 0.99 with even a minor drop at the last epoch to 0.9858.
+
+It tells that the generalisation of the model is not good, as the model improves itself continuously on the training set, but stays numb to the validation set. 
+
+
+#### Question 13: What values do you get for the model’s accuracy and loss? 
+
+The model's accuracy is 0.9896.
+
+The model's loss is 0.03824518.
+
+
+#### Question 14: Discuss whether this accuracy is sufficient for some uses of automatic hand-written digit classification.
+
+This accuracy is sufficient, based on the following reasons:
+1. For the hand-written digit classification, the random accuracy should be 0.1, whereas this model generates the accuracy 0.9896, which is much higher than the score of the previous model. So this model achieves stronger statistical power.
+
+2. It is commercially sufficient also, as the error rate of this model is 1.04%.
+
+
+#### Question 15: Describe the principles of overfitting and how dropout can reduce this.
+
+The principle of overfitting is the imbalance between optimization and generalization for the model over the training history. As the learning progresses, the model gains optimization which aligns too well with the training set, while it loses generalization to predict th unforseen data from the validation set.
+
+The dropout can remove a certain fraction of the features from the output during the training. Thus the model will not align too closely with the training set, as these arbitary noises are introduced into the training set.
+
+
+#### Question 16: How does the training history differ from the previous (convolutional) model, for both the training and validation sets, and for the time taken to run each model epoch?
+
+
+
+
+#### Question 17: What does this tell us about the generalisation of the two models? 
+
