@@ -1,28 +1,57 @@
 convolutionOperation <- function(filters, input) 
 {
+  #pre-process the input to ensure it is of the 2D shape (x, x, 1)
+  if(dim(input)[3] != 1)
+    stop("only 2d input is allowed!")
+  
   inputshape <- dim(input)
   filtershape <- dim(filters)
-  #intialise stack of feature maps
-  fmaps <- matrix(0, c(inputshape[1] -2, inputshape[2] -2, filtershape[3]))
+  
+  #steps for filters to take to move along x-axis, and x_steps = ncol(fmaps)
+  x_steps = inputshape[2] - filtershape[2] + 1
+  
+  #teps for filters to take to move along y-axis, and y_steps = nrow(fmaps)
+  y_steps = inputshape[1] - filtershape[1] + 1
+  
+  #steps for filters to take to move along z-axis, a.k.a. depth. 
+  #E.g., black-and-white images have 1 depth, and color images have 3 depths
+  depth = dim(filters)[3]
+  
+  
+  #initialise stack of feature maps
+  fmaps <- array(0, c(x_steps, y_steps, depth))
+  
+  #initialise the position in fmaps, as to where to update its value
+  x <- 1
+  y <- 1
+  
+  #crop increment of input:
+  #E.g., if a 3x3 matrix is the cropped matrix from a 9x9 input matrix, then the increment = 3-1 = 2
+  increment <- filtershape[1] - 1
+  
+  #if output matrix = cropped input matrix * filter,
+  #Then pos is the position in the output matrix to get its value and pass it to fmaps
+  pos <- (filtershape[1] + 1) / 2
   
   #for all filters
-  for(j in seq(filtershape[3]))
+  for(i in seq(depth))
   {
-    #loop through image coordinates
-    for(x in seq(inputshape[1] - 2))
+    for(j in seq(x_steps))
     {
-      for(y in seq(inputshape[2] - 2))
+      for(k in seq(y_steps))
       {
-        #apply filter to each position
-        image_sample <- input[x : x + filtershape[1] , y : y + filtershape [2], ]
-        filter <- filters[,,j]
-        feature <- image_sample * filter
-        #save result in feature map
-        fmap[x,y,j] <- feature
-
+        output <- input[k:k+increment, j:j+increment,] * filters[,,i]
+        output <- array_reshape(output, c(filtershape[1], filtershape[2], 1))
+        fmaps[x,y,i] <- output[pos, pos, 1]
+        y <- y + 1
       }
+      
+      x <- x + 1
+      y <- 1 
     }
-
+    
+    x <- 1
+    y <- 1
   }
   
   #export feature maps
@@ -30,12 +59,7 @@ convolutionOperation <- function(filters, input)
 }
 
 #testing
-mnist <- dataset_mnist()
-x <- array_reshape(mnist$test$x, c(10000, 28, 28, 1))
-x <- x / 255
-
-example_image <- x[1,,,]
-example_image <- array_reshape(example_image, c(28,28,1))
-example_filters <- matrix(1, c(3,3,32))
-
+example_image <- array(runif(100), c(6,6,1))
+example_filters <- array(runif(1),c(3,3,2))
 featuremaps <- convolutionOperation(example_filters, example_image)
+
