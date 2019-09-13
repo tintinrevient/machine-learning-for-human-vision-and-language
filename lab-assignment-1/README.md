@@ -36,9 +36,9 @@ The training history is as below:
 
 #### Question 4: Describe how the accuracy on the training and validation sets progress differently across epochs, and what this tells us about the generalisation of the model. 
 
-Around the epoch 4, the accuracy rate for the validation set reaches its maximum value 0.927 and begins to degrade and stagnate at approximately 0.925, whereas the accuracy rate for the training set continues to increase until it stalls around 0.925.
+Around the epoch 4, the accuracy rate for the validation set reaches its maximum value 0.927 and begins to degrade and stagnate at approximately 0.925, which means that further changes to the model are no longer increasing its fit to new data. The accuracy rate for the training set continues to increase until it stalls around 0.925, which means the model can no longer find a better fit, and the remaining errors are the result of the limitations of the model and the dataset.
 
-It tells that the generalisation of the model is not good, as the model is over-fit for the training set and lacks the capability to predict the unknown patterns in the validation set.
+The scores for the training and validation set over the last few epochs are nearly identical, which suggests that the model generalises well to new data.
 
 
 #### Question 5: What values do you get for the model’s accuracy and loss? 
