@@ -86,9 +86,9 @@ The training history is as below:
 
 #### Question 12: How does the training history differ from the previous model, for the training and validation sets? What does this tell us about the generalisation of the model?
 
-For both the training set and the validation set, the training history remains almost the same as that of the previous model. What is slightly different is for the validation set. The accurary for the validation set starts at 0.9809 from epoch 1, and it fluctuates slightly since then around 0.99 with even a minor drop at the last epoch to 0.9858.
+For both the training set and the validation set, the training history remains almost the same as that of the previous model. What is slightly different is for the validation set. The accurary for the validation set starts at 0.9809 from epoch 1, and it fluctuates slightly since then around 0.99 with even a minor drop at the last epoch to 0.9858, though this may be random fluctuation.
 
-It tells that the generalisation of the model is not good, as the model improves itself continuously on the training set, but stays numb to the validation set. 
+The generalisation of the model is adequate since it performs very well on the training set, but there seems to be some overfitting going on in the last few epochs, as the model improves itself continuously on the training set, but stays numb to the validation set. 
 
 
 #### Question 13: What values do you get for the model’s accuracy and loss? 
