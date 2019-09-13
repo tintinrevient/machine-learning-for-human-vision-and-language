@@ -147,3 +147,19 @@ model <- keras_model_sequential() %>%
   layer_dropout(rate = 0.25) %>% 
   layer_dense(units = 10, activation = 'softmax')
 ```
+
+#### Question 19: Execute this model fit command. After your fitting is finished, plot the training history and put it in your answers.
+
+?
+
+#### Question 20: How does the training history differ from the convolutional model for digit recognition? Why do you think this is?
+
+?
+
+#### Question 21: How does the time taken for each training epoch differ from the convolutional model for digit recognition? Give several factors that may contribute to this difference.
+
+?
+
+#### Question 22: Read the research paper “Performance-optimized hierarchical models predict neural responses in higher visual cortex”, available from: [http://www.pnas.org/content/pnas/111/23/8619.full.pdf](http://www.pnas.org/content/pnas/111/23/8619.full.pdf). Write a short (~500 word) summary of the experimental approach and results.
+
+?
