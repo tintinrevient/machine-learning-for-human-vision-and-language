@@ -126,4 +126,24 @@ For the time taken to train the model, the previous model takes 80 seconds per e
 It tells that the previous model without dropout is less general than the current model with dropout. It can be deduced that the dropout layer can increase generalization and prevent overfitting during the training of models.
 
 
+#### Question 18: What code did you use to define the model described here?
 
+```
+model <- keras_model_sequential() %>%
+  layer_conv_2d(filters = 32, kernel_size = c(3,3),
+                activation = 'relu', input_shape = c(32, 32, 3), padding = "same") %>%
+  layer_conv_2d(filters = 32, kernel_size = c(3,3),
+                activation = 'relu') %>%
+  layer_max_pooling_2d(pool_size = c(2,2)) %>%
+  layer_dropout(rate = 0.25) %>% 
+  layer_conv_2d(filters = 32, kernel_size = c(3,3),
+                activation = 'relu', padding = "same") %>%
+  layer_conv_2d(filters = 32, kernel_size = c(3,3),
+                activation = 'relu') %>%
+  layer_max_pooling_2d(pool_size = c(2,2)) %>%
+  layer_dropout(rate = 0.25) %>% 
+  layer_flatten() %>%
+  layer_dense(units = 512, activation = 'relu') %>%
+  layer_dropout(rate = 0.25) %>% 
+  layer_dense(units = 10, activation = 'softmax')
+```
