@@ -75,9 +75,7 @@ The high accuracy for the validation set tells that the generalization of this m
 
 #### Question 10: How does the new model’s accuracy on test set classification differ from the previous model? Why do you think this is?
 
-The new model's accuracy on the test set is 0.9814, which is much higher than the accuracy from the previous model.
-
-It is because the generalization of this new model is good, so it can predict more accurately for the unknown patterns in the test set.
+The new model's accuracy on the test set is 0.9814, which is much higher than the accuracy from the previous model. Apparently the ReLU activation improves the model's generalisation, because it is less sensitive to noise in the new data, due to the activation threshold.
 
 
 #### Question 11: Plot the training history and add it to your answers.
