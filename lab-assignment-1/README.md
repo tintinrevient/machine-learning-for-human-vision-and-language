@@ -188,3 +188,4 @@ Learning rate, batch size and ratio of training to test data don't necessarily a
 
 The simplest network we could build used all input features, 1 hidden layer with 6 neurons, and ReLU activation.
 
+![spiral](./pix/spiral.png)
