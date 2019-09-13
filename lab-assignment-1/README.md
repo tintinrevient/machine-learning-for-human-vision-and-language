@@ -166,6 +166,14 @@ model <- keras_model_sequential() %>%
 
 #### Question 23: Play around with these settings and see how they affect your ability to learn classification of different data sets. Write down what you found and how you interpret the effects of these settings.
 
-?
+The key factors that affect the accuracy of classification for different data sets are as below:
+1. Input features
+2. Number of hidden layers
+3. Number of neurons
+4. Activation function
+5. Noise
+
+Learning rate, batch size and ratio of training to test data don't necessarily affect the final result. 
+
 
 
