@@ -108,10 +108,8 @@ This accuracy is sufficient, based on the following reasons:
 
 #### Question 15: Describe the principles of overfitting and how dropout can reduce this.
 
-The principle of overfitting is the tradeoff between optimization and generalization for the model over the training history. As the learning progresses, the model gains optimization which aligns too well with the training set, while it loses generalization to predict the unforseen data from the validation set.
-
-The dropout can remove a certain fraction of the features from the output during the training. Thus the model will not align too closely with the training set, as these arbitary noises are introduced into the training set.
-
+Overfitting happens when the model creates a very close fit to the training data, which matches all the specific fluctuations of the training data, even ones that are not relevant. This decreases the generalisation of the model.
+Dropout prevents the model from aligning too closely with the training set, by introducing arbitrary noises into the training set during training.
 
 #### Question 16: How does the training history differ from the previous (convolutional) model, for both the training and validation sets, and for the time taken to run each model epoch?
 
