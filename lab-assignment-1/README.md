@@ -54,8 +54,7 @@ This accuracy is sufficient, based on the following reasons:
 1. For the hand-written digit classification, the random accuracy should be 0.1, whereas this model generates the accuracy 0.9217. So this model achieves the statistical power.
 
 This accuracy is insufficient, based on the following reasons:
-1. It is not commercially sufficient, as the error rate is 7.83%, which is above 1%.
-
+1. It is not commercially sufficient, as the error rate is 7.83%, and for important documents like bank cheques, we don't want any errors. However, a 90% accuracy for individual digits may not be as bad as it sounds. If a system has to register a bank account number, for instance, an error in a single digit will result in an invalid number - something which a computer can also easily verify. As such, the chances of a computer registering an incorrect bank account number without raising an error would be much lower, since it needs to make multiple errors and they need to cancel each other out.
 
 #### Question 7:  How does linear activation of units limit the possible computations this model can perform?
 
