@@ -186,5 +186,5 @@ Learning rate, batch size and ratio of training to test data don't necessarily a
 
 #### Question 24: What is the minimum you need in the network to classify the spiral shape with a test set loss of below 0.1?
 
-The simplest network we could build used all input features, 1 hidden layer with 5 neurons, and ReLU activation.
+The simplest network we could build used all input features, 1 hidden layer with 6 neurons, and ReLU activation.
 
