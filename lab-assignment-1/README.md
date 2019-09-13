@@ -5,7 +5,7 @@
 
 1. The OCR (Optical Character Recognition) system which can recognize the numeric entries in the application forms filled up by hand in any bank branch, e.g. the applicant's bank account. And with the help of OCR, the paper forms can be automatically scanned and logged in the database.
 
-2. License plate of cars?
+2. It would be useful for digitalising instance historic records (though these would often require their own training data to account for historic handwriting). Optical character recognition can allow searching through text, etc.
 
 
 #### Question 2: In the output text in your console, how long did each epoch take to run?
