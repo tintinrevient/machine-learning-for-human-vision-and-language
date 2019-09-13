@@ -70,7 +70,7 @@ The training history is as below:
 
 The accuracy rate of this training history achieves 0.979 for the validation set and 0.9966 for the training set respectively, which are much higher than 0.927 and 0.925 from the previous model. Moreover, the accurary rate for the validation set keeps increasing until it peaks at epoch 9 with the value 0.979, whereas in the previous model for the validation set, it has a pre-mature stop at epoch 4.
 
-It tells that the generalization of this model is pretty good, though it performs worse on the validation set compared with accuracy rate from the training set, but the accuracy rate for the validation set keeps growing and it reaches higher accuracy rate with 0.979.
+The high accuracy for the validation set tells that the generalization of this model is pretty good, and it will perform better on new data than the previous model. However, we also see that the accuracy on the valuation set stagnates around epoch 6, while the accuracy on the training set continues to increase. This means that at this point, the model is finding a better fit for the training set without increasing its generalisation value, which means that it is overfitting.
 
 
 #### Question 10: How does the new model’s accuracy on test set classification differ from the previous model? Why do you think this is?
