@@ -184,4 +184,7 @@ The model performs significantly better when there are more neurons in the first
 Learning rate, batch size and ratio of training to test data don't necessarily affect the final result. They do have an effect the development in training, and the duration of training.
 
 
+#### Question 24: What is the minimum you need in the network to classify the spiral shape with a test set loss of below 0.1?
+
+
 
