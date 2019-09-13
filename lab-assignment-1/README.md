@@ -58,8 +58,7 @@ This accuracy is insufficient, based on the following reasons:
 
 #### Question 7:  How does linear activation of units limit the possible computations this model can perform?
 
-The linear activation of units makes the model more computationally expensive and may lead to the overfitting.
-
+When an input value x contributues to the activation A of a unit, a linear activation does not allow to implement some threshold for x. This means that very low values of x still contribute to A, even if those are not actually important. This leads to more noise in the data, which makes training harder.
 
 #### Question 8: Plot the training history and add it to your answers.
 
