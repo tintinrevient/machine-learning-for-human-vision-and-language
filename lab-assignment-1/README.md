@@ -113,7 +113,7 @@ Dropout prevents the model from aligning too closely with the training set, by i
 
 #### Question 16: How does the training history differ from the previous (convolutional) model, for both the training and validation sets, and for the time taken to run each model epoch?
 
-For both the training set and the validation set, the accurary keeps upgrading. For the training set, the accurary witnesses a steep line from 0.9039 to 0.9862. And for the validation set, it increases slightly from 0.9781 to 0.9889. What differs from the previous model is that the model reaches a higher accurary for the validation set than for the training set.
+For both the training set and the validation set, the accurary keeps upgrading. For the training set, the accurary witnesses a steep line from 0.9039 to 0.9862. And for the validation set, it increases slightly from 0.9781 to 0.9889. What differs from the previous model is that the results for the validation set are very close to those of the training set.
 
 The training history is as below for this new model:
 ![plot-of-history-4](./pix/plot-of-history-4.png)
