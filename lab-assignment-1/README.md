@@ -168,18 +168,24 @@ model <- keras_model_sequential() %>%
 
 The key factors that affect the accuracy of classification for different data sets are as below:
 1. Input features: these are really important. More input features increases the  size of the hypothesis space. Also, if you don't use all input features, the choice of features can really affect how accurate the program can be. This really depends on the dataset. Well-chosen input features can increase the accuracy of the program and reduce the number of hidden layers necessary. 
-2. Number of hidden layers & number of neurons: both of these can increase accuracy, but it's hard to see the interaction between the two: is it better to have more neurons or to add more layers? We did observe that it's not useful for a hidden layer to have more neurons than the previous one. For instance, here we try to do the same training exercies with a layer of 6 neurons followed by one with 3 neurons:
-Here is the same model with a layer of 3 neurons followed by one of 6 neurons:
+
+2. Number of hidden layers & number of neurons: both of these can increase accuracy, but it's hard to see the interaction between the two: is it better to have more neurons or to add more layers? We did observe that it's not useful for a hidden layer to have more neurons than the previous one. For instance, here we try to do the same training exercies with a layer of 6 neurons followed by one with 3 neurons, or with the order of hidden layers reversed.
 
 3-6             |  6-3
 :-------------------------:|:-------------------------:
 ![3-6](./pix/3-6.png)  |  ![6-3](./pix/6-3.png)
 
 The model performs significantly better when there are more neurons in the first layer instead of the second. This makes sense, because in the second case, the output of layer 1 is limited to 3 dimensions. Therefore, the increased dimensionality of layer 1 can't help in a more complex image of the dataset, because it is working with limited input.
-3. Activation function
+
+3. Activation function: Different activation functions affect the accuracy of the result. Especially in very simple networks, it makes a big difference. Linear activation tends to perform the worst.
+
 4. Noise: Adding noise decreases the final accuracy, but it does not really affect the training development.
 
 Learning rate, batch size and ratio of training to test data don't necessarily affect the final result. They do have an effect the development in training, and the duration of training.
 
 
+#### Question 24: What is the minimum you need in the network to classify the spiral shape with a test set loss of below 0.1?
 
+The simplest network we could build used all input features, 1 hidden layer with 6 neurons, and ReLU activation.
+
+![spiral](./pix/spiral.png)
