@@ -15,7 +15,7 @@ convolutionOperation <- function(filters, input)
   
   #steps for filters to take to move along z-axis, a.k.a. depth. 
   #E.g., black-and-white images have 1 depth, and color images have 3 depths
-  depth = dim(filters)[3]
+  depth = filtershape[3]
   
   
   #initialise stack of feature maps
@@ -40,9 +40,8 @@ convolutionOperation <- function(filters, input)
     {
       for(k in seq(y_steps))
       {
-        output <- input[k:k+increment, j:j+increment,] * filters[,,i]
-        output <- array_reshape(output, c(filtershape[1], filtershape[2], 1))
-        fmaps[x,y,i] <- output[pos, pos, 1]
+        output <- input[j:(j+increment), k:(k+increment),] * filters[,,i]
+        fmaps[x,y,i] <- sum(output)
         y <- y + 1
       }
       
@@ -59,7 +58,7 @@ convolutionOperation <- function(filters, input)
 }
 
 #testing
-example_image <- array(runif(100), c(6,6,1))
-example_filters <- array(runif(1),c(3,3,2))
+example_image <- array(round(runif(25, min=-3, max=3)), c(5,5,1))
+example_filters <- array(round(runif(9, min=-3, max=3)),c(3,3,2))
 featuremaps <- convolutionOperation(example_filters, example_image)
 
