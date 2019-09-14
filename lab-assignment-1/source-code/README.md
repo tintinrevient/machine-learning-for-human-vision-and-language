@@ -50,7 +50,7 @@ Verify the output of the element-wise multiplication:
 [3,]   -2    0    1
 ```
 
-Calculate the sum value of the output:
+Calculate the sum of the output:
 ```
 > sum <- sum(output)
 
