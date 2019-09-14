@@ -17,9 +17,8 @@ convolutionOperation <- function(filters, input)
   #E.g., black-and-white images have 1 depth, and color images have 3 depths
   depth = filtershape[3]
   
-  
   #initialise stack of feature maps
-  fmaps <- array(0, c(x_steps, y_steps, depth))
+  fmaps <- array(0, c(y_steps, x_steps, depth))
   
   #initialise the position in fmaps, as to where to update its value
   x <- 1
@@ -28,10 +27,6 @@ convolutionOperation <- function(filters, input)
   #crop increment of input:
   #E.g., if a 3x3 matrix is the cropped matrix from a 9x9 input matrix, then the increment = 3-1 = 2
   increment <- filtershape[1] - 1
-  
-  #if output matrix = cropped input matrix * filter,
-  #Then pos is the position in the output matrix to get its value and pass it to fmaps
-  pos <- (filtershape[1] + 1) / 2
   
   #for all filters
   for(i in seq(depth))
