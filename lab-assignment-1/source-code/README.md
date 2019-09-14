@@ -84,7 +84,7 @@ Finally -3 will be passed to the feature map in the matrix position (1,1):
 ### How to debug in RStudio
 
 Step 1: Move the curser to the line in the source code, and choose "Debug" -> "Toggle Breakpoint"
-![toggle_breakpoint](./pix/toggle_breakpoint.png)
+![toggle_breakpoint](./pix/toggle.png)
 
 The red breakpoint dot will then display alongside the line you want to debug for.
 ![breakpoint](./pix/breakpoint.png)
