@@ -200,7 +200,7 @@ The source code is in this [link](./source-code/relu.R).
 
 #### Question 27: Write a simple function that achieves max pooling. This should allow you to specify the spatial extent of the pooling, with the size of the output feature map changing accordingly. Give your code as the answer.
 
-?
+The source code is in this [link](./source-code/max_pooling.R).
 
 #### Question 28: Write a simple function that achieves normalisation within each feature map, modifying the feature map so that its mean value is zero and its standard deviation is one. Give your code as the answer. 
 

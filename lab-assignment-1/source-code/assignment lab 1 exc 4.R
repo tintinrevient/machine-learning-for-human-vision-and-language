@@ -54,6 +54,6 @@ convolutionOperation <- function(filters, input)
 
 #testing
 example_image <- array(round(runif(25, min=-3, max=3)), c(5,5,1))
-example_filters <- array(round(runif(9, min=-3, max=3)),c(3,3,2))
+example_filters <- array(round(runif(18, min=-3, max=3)),c(3,3,2))
 featuremaps <- convolutionOperation(example_filters, example_image)
 
