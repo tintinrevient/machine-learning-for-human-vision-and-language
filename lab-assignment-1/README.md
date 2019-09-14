@@ -204,7 +204,7 @@ The source code is in this [link](./source-code/max_pooling.R).
 
 #### Question 28: Write a simple function that achieves normalisation within each feature map, modifying the feature map so that its mean value is zero and its standard deviation is one. Give your code as the answer. 
 
-?
+The source code is in this [link](./source-code/normalisation.R).
 
 #### Question 29: Write a function that produces a fully-connected layer. This should allow you to specify the number of output nodes, and link each of these to every node a stack of feature maps. The stack of feature maps will typically be flattened into a 1- dimensional matrix first.
 
