@@ -5,7 +5,7 @@
 How to calculate a 2-dimentional feature map in R, given a 2-dimensional input image with a 2-dimensional filter?
 
 Below illustration will be implemented with a source code snippet in R.
-![convolution_operation](./pix/convolution_operation.png) 
+![convolution_operation](./pix/convolve_operation.png) 
 
 
 Step 1: Initialise a 2-dimensional input image:
