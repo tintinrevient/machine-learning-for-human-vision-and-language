@@ -9,10 +9,7 @@ softmax <- function(input)
   #natural log base
   e = exp(1)
   
-  sum <- 0
-  for(i in seq(length))
-    sum <- sum + e^input[i]
-  
+  sum <- sum(e^input)
   output <- (e^input)/sum
   
   #return the output
