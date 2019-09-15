@@ -98,3 +98,4 @@ You can proceed line by line by clicking "Next" button at the top of the console
 
 * https://www.statmethods.net/advstats/matrix.html
 * http://www.cookbook-r.com/Numbers/Generating_random_numbers/
+* https://keras.io/layers/core/

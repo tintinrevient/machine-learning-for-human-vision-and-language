@@ -208,11 +208,13 @@ The source code is in this [link](./source-code/normalisation.R).
 
 #### Question 29: Write a function that produces a fully-connected layer. This should allow you to specify the number of output nodes, and link each of these to every node a stack of feature maps. The stack of feature maps will typically be flattened into a 1- dimensional matrix first.
 
-?
+The "layer_flatten" source code is in this [link](./source-code/flatten.R).
+
+The "layer_dense" source code is in this [link](./source-code/fully_connected_layer.R).
 
 #### Question 30: Write a function that converts the activation of a 1-dimensional matrix (such as the output of a fully-connected layer) into a set of probabilities that each matrix element is the most likely classification. This should include the algorithmic expression of a softmax (normalised exponential) function.
 
-?
+The source code is in this [link](./source-code/softmax.R).
 
 #### Question 31: Explain the principle of backpropagation of error in plain English. This can be answered with minimal mathematical content, and should be IN YOUR OWN WORDS. What is backpropagation trying to achieve, and how does it do so?
 
