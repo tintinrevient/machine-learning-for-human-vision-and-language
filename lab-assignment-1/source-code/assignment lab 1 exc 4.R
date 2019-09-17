@@ -7,45 +7,36 @@ convolutionOperation <- function(filters, input)
   inputshape <- dim(input)
   filtershape <- dim(filters)
   
-  #steps for filters to take to move along x-axis, and x_steps = ncol(fmaps)
+  #steps for filters to take to move along x-axis, so x_steps = ncol(fmaps)
   x_steps = inputshape[2] - filtershape[2] + 1
   
-  #teps for filters to take to move along y-axis, and y_steps = nrow(fmaps)
+  #steps for filters to take to move along y-axis, so y_steps = nrow(fmaps)
   y_steps = inputshape[1] - filtershape[1] + 1
   
   #steps for filters to take to move along z-axis, a.k.a. depth. 
-  #E.g., black-and-white images have 1 depth, and color images have 3 depths
+  #E.g., black-and-white images have depth 1, and color images have depth 3
   depth = filtershape[3]
   
   #initialise stack of feature maps
   fmaps <- array(0, c(y_steps, x_steps, depth))
   
-  #initialise the position in fmaps, as to where to update its value
-  x <- 1
-  y <- 1
-  
-  #crop increment of input:
-  #E.g., if a 3x3 matrix is the cropped matrix from a 9x9 input matrix, then the increment = 3-1 = 2
+  #size of the interval in the input image that the filter will cover
   increment <- filtershape[1] - 1
   
-  #for all filters
+  #loop through filters
   for(i in seq(depth))
   {
+    #loop through input image
     for(j in seq(x_steps))
     {
       for(k in seq(y_steps))
       {
+        #elementwise multiplication of filter with current section of input image
         output <- input[j:(j+increment), k:(k+increment),] * filters[,,i]
-        fmaps[x,y,i] <- sum(output)
-        y <- y + 1
+        #sum the output and store it in the featuremaps
+        fmaps[j,k,i] <- sum(output)
       }
-      
-      x <- x + 1
-      y <- 1 
     }
-    
-    x <- 1
-    y <- 1
   }
   
   #export feature maps
@@ -53,7 +44,6 @@ convolutionOperation <- function(filters, input)
 }
 
 #testing
-example_image <- array(round(runif(25, min=-3, max=3)), c(5,5,1))
-example_filters <- array(round(runif(18, min=-3, max=3)),c(3,3,2))
+example_image <- array(round(runif(25, min=-3, max=3)), c(25,25,1))
+example_filters <- array(round(runif(18, min=-3, max=3)),c(5,5,2))
 featuremaps <- convolutionOperation(example_filters, example_image)
-
