@@ -197,6 +197,10 @@ After the experiment, it gathers object categorization performance results on th
 
 The result shows that at all levels of variation, the IT population is consistent with human performance levels. And the V4 population matches IT and human performance at low levels of variation.
 
+For the multi-layer computational models, the top layer's performance complies with human performance at all levels, whereas the lower layers only match human performance at a limited variety of image preferences.
+
+So a resemblance is drawn between IT neural response and HMO's top layer, between V4 neural response and HMO's penultimate layer.
+
 #### Question 23: Play around with these settings and see how they affect your ability to learn classification of different data sets. Write down what you found and how you interpret the effects of these settings.
 
 The key factors that affect the accuracy of classification for different data sets are as below:
