@@ -144,7 +144,7 @@ model <- keras_model_sequential() %>%
   layer_dropout(rate = 0.25) %>% 
   layer_flatten() %>%
   layer_dense(units = 512, activation = 'relu') %>%
-  layer_dropout(rate = 0.25) %>% 
+  layer_dropout(rate = 0.5) %>% 
   layer_dense(units = 10, activation = 'softmax')
 ```
 
