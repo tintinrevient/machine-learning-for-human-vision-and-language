@@ -185,7 +185,7 @@ The contributing factors are as below:
 
 This experiment compares the object recognition abilities between inferior temporal (IT) cortex and hierarchical neural network models.
 
-For the approach, it prepares at first the benchmark testing image set, which consists of images drawn from eight categories with various object orientation, size and position. The image set comes into three levels of variation: low (fixed orientation, size, and position), medium and high (180° rotations on all axes, 2.5× dilation, and full-frame translations).
+For the approach, it prepares at first the benchmark testing image set, which consists of images drawn from eight categories with various object orientation, size and position. The image set comes into three levels of object view variation: low (fixed orientation, size, and position), medium and high (180° rotations on all axes, 2.5× dilation, and full-frame translations).
 
 Then it trains models, which are HMO, IT Population, V4 Population, HMAX, PLOS09, V2-like and V1-like to be used in the comparison. More specifically, linear classifiers on IT Population and V4 population are trained to obtain neural reference points on categorization performance. Besides, it also uses pixel model and SIFT as baseline computer vision models for low-variation tasks. 
 
@@ -193,6 +193,9 @@ At the same time of using the above models to predict the object classification 
 
 And as a behavioral reference point, the experiment measures human performance on these tasks using web-based crowdsourcing methods.
 
+After the experiment, it gathers object categorization performance results on the test images at three increasing levels of object view variation. The results measure the object recognition performance for IT and V4 neural responses, computational models (e.g., HMO, HMAX, etc...) and humans.
+
+The result
 
 #### Question 23: Play around with these settings and see how they affect your ability to learn classification of different data sets. Write down what you found and how you interpret the effects of these settings.
 
