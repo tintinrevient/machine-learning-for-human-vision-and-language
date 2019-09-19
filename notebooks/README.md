@@ -1,14 +1,5 @@
 ## Notebooks
 
-### Useful Commands
-
-To plot the original picture from the training dataset:
-
-```
-> plot(as.raster(x_train[1,,,]))
-```
-
-
 
 ### References:
 * https://keras.io/
