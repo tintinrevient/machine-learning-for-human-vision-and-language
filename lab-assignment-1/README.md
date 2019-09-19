@@ -165,7 +165,7 @@ As to the reason why this difference occurs:
 
 1. **Dataset**: This model's dataset cifar10 is of the shape (32, 32, 3), which includes colored images, whereas the previous model's dataset mnist is of the shape (28, 28, 1), which just consists of black-and-white figures. As the shape tells, the color channels of the cifar10 dataset are two more than that of the mnist dataset, which make the learning more complex and request for more computational load.
 
-2. **Multi-class classification goal**: This model's goal is to classify the colored images into ten classes, which are airplane, automobile, bird, cat, deer, dog, frog, horse, ship and truck. The image difference between these ten classes (e.g. cat vs. dog, automobile vs truck) is more subtle, compared to the classification of the clear-cut black-and-white figures.
+2. **Multi-class classification goal**: This model's goal is to classify the colored images into ten classes, which are airplane, automobile, bird, cat, deer, dog, frog, horse, ship and truck. The image difference between these ten classes (e.g., cat vs. dog, automobile vs truck) is more subtle, compared to the classification of the clear-cut black-and-white figures.
 
 
 #### Question 21: How does the time taken for each training epoch differ from the convolutional model for digit recognition? Give several factors that may contribute to this difference.
