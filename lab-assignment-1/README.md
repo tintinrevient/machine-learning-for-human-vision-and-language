@@ -201,6 +201,8 @@ For the multi-layer computational models, the top layer's performance complies w
 
 So a resemblance is drawn between IT neural response and HMO's top layer, between V4 neural response and HMO's penultimate layer.
 
+At a result, the experiment demonstrates that performance-optimised hierarchical models predict neural responses in higher visual cortex, and it also indicates that the top-down perspective can complement the bottom-up approach to understand how the visual neurons work, as lower visual cortex might be selected precisely by higher visual cortex to support its computation.
+
 #### Question 23: Play around with these settings and see how they affect your ability to learn classification of different data sets. Write down what you found and how you interpret the effects of these settings.
 
 The key factors that affect the accuracy of classification for different data sets are as below:
