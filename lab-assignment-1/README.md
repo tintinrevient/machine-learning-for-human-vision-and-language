@@ -178,6 +178,8 @@ The contributing factors are as below:
 
 2. **Layers**: There are two more convolutional layers, one more max pooling layer and one more dropout layer than the previous model, so it takes more time for each batch to complete the training.
 
+3. **Batch Size**: The batch size is 32 for this model, whereas it is 128 for the previous model. So for this model, it takes more batches for one epoch.
+
 
 #### Question 22: Read the research paper “Performance-optimized hierarchical models predict neural responses in higher visual cortex”, available from: [http://www.pnas.org/content/pnas/111/23/8619.full.pdf](http://www.pnas.org/content/pnas/111/23/8619.full.pdf). Write a short (~500 word) summary of the experimental approach and results.
 
