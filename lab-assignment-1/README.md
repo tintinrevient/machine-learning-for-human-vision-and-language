@@ -150,7 +150,8 @@ model <- keras_model_sequential() %>%
 
 #### Question 19: Execute this model fit command. After your fitting is finished, plot the training history and put it in your answers.
 
-?
+The training history is as below:
+![cifar10](./pix/cifar10.png)
 
 #### Question 20: How does the training history differ from the convolutional model for digit recognition? Why do you think this is?
 
