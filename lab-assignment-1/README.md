@@ -187,9 +187,12 @@ This experiment compares the object recognition abilities between inferior tempo
 
 For the approach, it prepares at first the benchmark testing image set, which consists of images drawn from eight categories with various object orientation, size and position. The image set comes into three levels of variation: low (fixed orientation, size, and position), medium and high (180° rotations on all axes, 2.5× dilation, and full-frame translations).
 
-Then it prepares the models, which are HMO, IT Population, V4 Population, HMAX, PLOS09, V2-like, V1-like and uses pixel model and SIFT as baseline computer vision models for low-variation tasks.
+Then it trains models, which are HMO, IT Population, V4 Population, HMAX, PLOS09, V2-like and V1-like to be used in the comparison. More specifically, linear classifiers on IT Population and V4 population are trained to obtain neural reference points on categorization performance. Besides, it also uses pixel model and SIFT as baseline computer vision models for low-variation tasks. 
 
-At the same time of using the above models to predict the object classification result from the testing image, it also uses multiple electrode arrays to collect responses from IT neurons to each image. Moreover as a behavioral reference point, the experiment also measures human performance on these tasks using web-based crowdsourcing methods.
+At the same time of using the above models to predict the object classification result from the testing image, it also uses multiple electrode arrays to collect responses from IT neurons to each image. 
+
+And as a behavioral reference point, the experiment measures human performance on these tasks using web-based crowdsourcing methods.
+
 
 #### Question 23: Play around with these settings and see how they affect your ability to learn classification of different data sets. Write down what you found and how you interpret the effects of these settings.
 
