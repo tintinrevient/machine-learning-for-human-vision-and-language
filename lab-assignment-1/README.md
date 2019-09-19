@@ -189,6 +189,8 @@ For the approach, it prepares at first the benchmark testing image set, which co
 
 Then it prepares the models, which are HMO, IT Population, V4 Population, HMAX, PLOS09, V2-like, V1-like and uses pixel model and SIFT as baseline computer vision models for low-variation tasks.
 
+At the same time of using the above models to predict the object classification result from the testing image, it also uses multiple electrode arrays to collect responses from IT neurons to each image. Moreover as a behavioral reference point, the experiment also measures human performance on these tasks using web-based crowdsourcing methods.
+
 #### Question 23: Play around with these settings and see how they affect your ability to learn classification of different data sets. Write down what you found and how you interpret the effects of these settings.
 
 The key factors that affect the accuracy of classification for different data sets are as below:
