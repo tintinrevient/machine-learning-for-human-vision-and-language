@@ -159,7 +159,7 @@ The difference of the training history focuses on below two points:
 
 1. **Validation accuracy**: This model's validation accuracy is 0.7196, which is much lower than the previous model's validation accuracy 0.9889.
 
-2. **Growth of validation and training accuracy**: For this model, the validation and training accuracy both start at a low value, which is 0.4267 and 0.3137 respectively, and the accuracy increases gradually as the training progresses. But for the previous model, the validation and training accuracy both start at a high value, which are above 0.9. More specifically, the validation accuracy is 0.975 at epoch 1, while the training accuracy increases rapidly from epoch 1 to epoch 2, from around 0.9 to above 0.96. Afterwards they just grow to a very limited extent.
+2. **Growth of validation and training accuracy**: For this model, the validation and training accuracy both start at a low value, which is 0.4267 and 0.3137 respectively, and the accuracy increases gradually as the training progresses. But for the previous model, the validation and training accuracy both start at a high value, which is above 0.9. More specifically, the validation accuracy is 0.975 at epoch 1, while the training accuracy increases rapidly from epoch 1 to epoch 2, from around 0.9 to above 0.96. Afterwards they just grow to a very limited extent.
 
 As to the reason why this difference occurs:
 
