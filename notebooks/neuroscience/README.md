@@ -2,7 +2,7 @@
 
 ###  Visual pathway
 
-![visual-pathway-2](./pix/visual-pathway-2.png)
+![visual-pathway-2](./pix/visual-pathway.png)
 
  (a) Lateral view of the macaque brain showing the connections in the ventral and dorsal visual streams (V1: primary visual area, V2, V4: extrastriate visual areas, IT: inferior temporal, PP: posterior parietal) and the anterior (PFCv: ventrolateral prefrontal cortex, PFCd: dorsolateral prefrontal cortex) brain areas. 
 
