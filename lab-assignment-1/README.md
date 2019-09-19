@@ -183,7 +183,11 @@ The contributing factors are as below:
 
 #### Question 22: Read the research paper “Performance-optimized hierarchical models predict neural responses in higher visual cortex”, available from: [http://www.pnas.org/content/pnas/111/23/8619.full.pdf](http://www.pnas.org/content/pnas/111/23/8619.full.pdf). Write a short (~500 word) summary of the experimental approach and results.
 
-This experiment 
+This experiment compares the object recognition abilities between inferior temporal (IT) cortex and hierarchical neural network models.
+
+For the approach, it prepares at first the benchmark testing image set, which consists of images drawn from eight categories with various object orientation, size and position. The image set comes into three levels of variation: low (fixed orientation, size, and position), medium and high (180° rotations on all axes, 2.5× dilation, and full-frame translations).
+
+Then it 
 
 #### Question 23: Play around with these settings and see how they affect your ability to learn classification of different data sets. Write down what you found and how you interpret the effects of these settings.
 
