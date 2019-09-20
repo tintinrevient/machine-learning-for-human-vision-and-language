@@ -1,12 +1,13 @@
 relu <- function(input)
 {
+  #loop through 2-dimensional featuremap
   for (x in seq(nrow(input)))
   {
     for (y in seq(ncol(input)))
-      input[x, y] <- max(input[x, y], 0)
+      input[x, y] <- max(input[x, y], 0) #0 = threshold
   }
   
-  #return the updated x
+  #return the updated feature map
   input
 }
 
