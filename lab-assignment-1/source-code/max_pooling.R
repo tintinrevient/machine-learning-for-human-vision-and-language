@@ -1,7 +1,7 @@
 maxPooling <- function(input, rows, cols)
 {
   #add padding if image size is not a multiple of pooling size
-  
+
   #... for number of rows
   if(dim(input)[1] %% rows != 0)
   {
@@ -45,8 +45,7 @@ maxPooling <- function(input, rows, cols)
       
       #matrix position y from input, as to where to crop the input
       pos_y <- 1 + stride_y*(i-1)
-      
-      
+
       output[y,x] <- max(input[pos_y:(pos_y+stride_y-1), pos_x:(pos_x+stride_x-1)])
       x <- x + 1
     }
@@ -58,7 +57,7 @@ maxPooling <- function(input, rows, cols)
   output
 }
 
-
 #testing
 input <- matrix(round(runif(20, min=0, max=10)), nrow=4, ncol=5)
+max_pooling <- matrix(0, nrow=2, ncol=2)
 output <- maxPooling(input, 2, 2)

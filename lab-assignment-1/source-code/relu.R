@@ -11,7 +11,7 @@ relu <- function(input)
     }
   }
   
-  #return the updated x
+  #return the updated feature map
   input
 }
 

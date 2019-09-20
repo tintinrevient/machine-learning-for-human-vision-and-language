@@ -183,7 +183,25 @@ The contributing factors are as below:
 
 #### Question 22: Read the research paper “Performance-optimized hierarchical models predict neural responses in higher visual cortex”, available from: [http://www.pnas.org/content/pnas/111/23/8619.full.pdf](http://www.pnas.org/content/pnas/111/23/8619.full.pdf). Write a short (~500 word) summary of the experimental approach and results.
 
-This experiment 
+This experiment compares the object recognition abilities between inferior temporal (IT) cortex and hierarchical neural network models.
+
+For the approach, it prepares at first the benchmark testing image set, which consists of images drawn from eight categories with various object orientation, size and position. The image set comes into three levels of object view variation: low (fixed orientation, size, and position), medium and high (180° rotations on all axes, 2.5× dilation, and full-frame translations).
+
+Then it trains models, which are HMO, IT population, V4 population, HMAX, PLOS09, V2-like and V1-like to be used in the comparison. More specifically, linear classifiers on IT population and V4 population are trained to obtain neural reference points on categorization performance. Besides, it also uses pixel model and SIFT as baseline computer vision models for low-variation tasks. 
+
+At the same time of using the above models to predict the object classification result from the testing image, it also uses multiple electrode arrays to collect responses from IT neurons to each image. 
+
+And as a behavioral reference point, the experiment measures human performance on these tasks using web-based crowdsourcing methods.
+
+After the experiment, it gathers object categorization performance results on the test images at three increasing levels of object view variation. The results measure the object recognition performance for IT and V4 neural responses, computational models (e.g., HMO, HMAX, etc...) and humans.
+
+The result shows that at all levels of variation, the IT population is consistent with human performance levels. And the V4 population matches IT and human performance at low levels of variation.
+
+For the multi-layer computational models, the top layer's performance complies with human performance at all levels, whereas the lower layers only match human performance at a limited variety of image preferences.
+
+So a resemblance is drawn between IT neural response and HMO's top layer, between V4 neural response and HMO's penultimate layer.
+
+At a result, the experiment demonstrates that performance-optimised hierarchical models predict neural responses in higher visual cortex, and it also indicates that the top-down perspective can complement the bottom-up approach to understand how the visual neurons work, as lower visual cortex might be selected precisely by higher visual cortex to support its computation.
 
 #### Question 23: Play around with these settings and see how they affect your ability to learn classification of different data sets. Write down what you found and how you interpret the effects of these settings.
 
@@ -239,11 +257,23 @@ The source code is in this [link](./source-code/softmax.R).
 
 #### Question 31: Explain the principle of backpropagation of error in plain English. This can be answered with minimal mathematical content, and should be IN YOUR OWN WORDS. What is backpropagation trying to achieve, and how does it do so?
 
-?
+Backpropagation adjusts the neural network by comparing the output of the network with the desired output. To determine where to make adjustments, the model calculates the error in the output and estimates how it changes based on the intput: if a larger input leads to a smaller error, we want the network to give a higher weight to that input. The error is estimated by comparing the actual output of the network with its desired output (i.e. the output in the training data).
+When making changes, the changes to a node in the network are proportional to the steepness of the error curve if we map the input of that node to the error of the network. The size of these adjustments is also dependent upon the learning rate of the model: a higher learning rate leads to more rigorous changes. 
 
 #### Question 32 (BONUS QUESTION): Describe the process of backpropagation in mathematical terms. Here, explain (in English) what each equation you give does, and relate this to the answers given in Question 31. You are welcome to express equations in R code (not python) rather than using equation layout.
 
-?
+We have a network with input X ( = [X1, X2 .... ]) and output y'. We compare that to the desired output y.
+
+The error of the network is estimated by a loss function, which may vary depending on the problem. For instance, we can use say E = (y - y')^2 .
+ 
+ Estimating how the error changes as a result of weight in the network w is done by calculating the derivative (d E / d w ). This is derived by appying the chain rule:
+ (d E / d w ) = (d E / y' ) ) ( d y' / d w )
+
+We now want to calculate two values: the derivative of the error as a function of the output, and the derivative of the output as a function of the weight. The exact formulas for these depend on the type of network. When we have the derivative of the error as a function of the weight (so we know how to adjust the weight to minimise the error), we adjust the weight as follows:
+
+D w = - r (d E / d w)
+
+where r is the learning rate of the training model. The new value of w, which we will call w', is equal to w + D w.
 
 #### Question 33 (BONUS QUESTION): Write a function to achieve backpropagation of error to affect the convolutional filter (kernel) structure used in question 25. Modify your function from question 25 to give the filters used as an output, so you can modify these filters using backpropagation. Initialise the network with random weights in the filters. Give the code for your convolution and backpropagation functions as your answer.
 

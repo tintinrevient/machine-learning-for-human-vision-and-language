@@ -1,16 +1,17 @@
 normalisation <- function(input)
 {
+  #get mean
   length = length(input)
   sum = sum(input)
   mean = sum/length
   
-  #tmp = input - mean(input)
+  #substract mean from input
   tmp = input - mean(input)
   
-  #sd = std(tmp)
+  #calculate standard deviation
   sd = sqrt(sum(tmp^2)/(length-1))
   
-  #output = tmp/std(tmp)
+  #divide by sd, don't do anything if sd = 0
   if(sd == 0)
     output = tmp
   else
