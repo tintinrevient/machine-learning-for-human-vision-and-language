@@ -1,9 +1,14 @@
 relu <- function(input)
 {
-  for (x in seq(nrow(input)))
-  {
-    for (y in seq(ncol(input)))
-      input[x, y] <- max(input[x, y], 0)
+  shape <- dim(input)
+
+  for(z in seq(shape[3])){
+    
+    for (x in seq(shape[1]))
+    {
+      for (y in seq(shape[2]))
+        input[x, y, z] <- max(input[x, y, z], 0)
+    }
   }
   
   #return the updated x
@@ -11,5 +16,5 @@ relu <- function(input)
 }
 
 #test
-input <- matrix(round(runif(9,min=-10,max=10)), nrow=3, ncol=3)
+input <- array(round(runif(18,min=-10,max=10)), dim=c(3, 3, 2))
 output <- relu(input)

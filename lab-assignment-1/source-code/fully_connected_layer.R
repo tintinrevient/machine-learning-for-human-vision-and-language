@@ -1,11 +1,7 @@
-denseLayer <- function(input, units)
+denseLayer <- function(input, units, weight_matrix)
 {
   #initialise the output with the length of units
   output <- rep(0, units)
-  
-  #initialise the weight matrix (which should NOT be hard-coded, and it shoud be learned during the training)
-  number_of_weights <- length(input) * units
-  weight_matrix <- matrix(runif(number_of_weights), nrow=length(input), ncol=units)
   
   #initialise the bias (which should NOT be hard-coded, and it should be learned during the training)
   bias_vector <- c(runif(units))
@@ -21,7 +17,7 @@ denseLayer <- function(input, units)
 }
 
 #testing
-input <- c(round(runif(10, min=1, max=10)))
-units <- 5
-output <- denseLayer(input, units)
+# input <- c(round(runif(10, min=1, max=10)))
+# units <- 5
+# output <- denseLayer(input, units, weight_matrix)
 
