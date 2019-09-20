@@ -231,7 +231,7 @@ The simplest network we could build used all input features, 1 hidden layer with
 
 #### Question 25: Write a simple function that achieves the convolution operation efficiently for two- dimensional and three-dimensional inputs. This should allow you input a set of convolutional filters (‘kernels’ in Keras’s terminology) and an input layer (or image) as inputs. The input layer should have a third dimension, representing a stack of feature maps, and each filter should have a third dimension of corresponding size. The function should output a number of two-dimensional feature maps corresponding to the number of input filters, though these can be stacked into a third dimensional like the input layer. Give your code as the answer.
 
-The source code is in this [link](./source-code/assignment%20lab%201%20exc%204.R).
+The source code is in this [link](./source-code/convolution.R).
 
 #### Question 26: Write a simple function that achieves rectified linear (relu) activation, with a threshold at zero. Give your code as the answer.
 
@@ -249,7 +249,7 @@ The source code is in this [link](./source-code/normalisation.R).
 
 The "layer_flatten" source code is in this [link](./source-code/flatten.R).
 
-The "layer_dense" source code is in this [link](./source-code/fully_connected_layer.R).
+The "layer_dense" source code is in this [link](./source-code/dense_layer.R).
 
 #### Question 30: Write a function that converts the activation of a 1-dimensional matrix (such as the output of a fully-connected layer) into a set of probabilities that each matrix element is the most likely classification. This should include the algorithmic expression of a softmax (normalised exponential) function.
 
@@ -281,7 +281,7 @@ where r is the learning rate of the training model. The new value of w, which we
 
 #### Question 35 (BONUS QUESTION): Write a piece of code that uses all of these functions (Questions 25-33) together to make a convolutional neural network with two convolutional layers, a fully connected layer, and an output layer (pooling is optional, but thresholding and normalisation are required). This should give the accuracy of the labels as an output. Give your code as your answer. 
 
-?
+The source code is in this [link](./source-code/forward_propagation.R).
 
 #### Question 36 (BONUS QUESTION): Use the resulting function to learn to classify the mnist data set, as you did in question 11. Plot the progression of the classification accuracy over 100 cycles.
 
