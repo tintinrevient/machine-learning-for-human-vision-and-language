@@ -77,8 +77,5 @@ units = 10
 input_count = ceiling((dim(mnist_image)[1]-2)/2 - 2) * ceiling((dim(mnist_image)[2]-2)/2 - 2) * 2
 weight_matrix <- matrix(runif(input_count * units), nrow=input_count, ncol=units)
 
-# intermediate_output <- layer_core(mnist_filter_1, mnist_image, TRUE)
-# output <- layer_core(mnist_filter_2, intermediate_output, FALSE)
-
 output <- forward_propagation(mnist_filter_1, mnist_filter_2, weight_matrix, mnist_image, 10)
 

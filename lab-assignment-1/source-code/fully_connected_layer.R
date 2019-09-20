@@ -17,7 +17,9 @@ denseLayer <- function(input, units, weight_matrix)
 }
 
 #testing
-# input <- c(round(runif(10, min=1, max=10)))
-# units <- 5
-# output <- denseLayer(input, units, weight_matrix)
+input <- c(round(runif(10, min=1, max=10)))
+units <- 5
+weight_matrix <- matrix(runif(length(input) * units), nrow=length(input), ncol=units)
+
+output <- denseLayer(input, units, weight_matrix)
 
