@@ -6,7 +6,7 @@ source("~/Documents/workspace/machine-learning-for-human-vision-and-language/lab
 source("~/Documents/workspace/machine-learning-for-human-vision-and-language/lab-assignment-1/source-code/relu.R")
 source("~/Documents/workspace/machine-learning-for-human-vision-and-language/lab-assignment-1/source-code/softmax.R")
 source("~/Documents/workspace/machine-learning-for-human-vision-and-language/lab-assignment-1/source-code/flatten.R")
-source("~/Documents/workspace/machine-learning-for-human-vision-and-language/lab-assignment-1/source-code/fully_connected_layer.R")
+source("~/Documents/workspace/machine-learning-for-human-vision-and-language/lab-assignment-1/source-code/dense_layer.R")
 
 # import the dataset
 mnist <- dataset_mnist()
@@ -57,9 +57,9 @@ layer_core <- function(filters, input, withMaxPooling) {
 
 forward_propagation <- function(filter1, filter2, weight_matrix, input, units) {
   intermediate_output <- layer_core(filter1, input, TRUE)
-  output <- layer_core(filter2, intermediate_output, FALSE)
+  layer_core_output <- layer_core(filter2, intermediate_output, FALSE)
   
-  flatten_output <- flatten(output)
+  flatten_output <- flatten(layer_core_output)
   dense_output <- denseLayer(flatten_output, units, weight_matrix)
   softmax_output <- softmax(dense_output)
   
