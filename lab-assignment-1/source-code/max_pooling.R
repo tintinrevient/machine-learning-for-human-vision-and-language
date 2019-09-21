@@ -1,63 +1,46 @@
-maxPooling <- function(input, rows, cols)
+#assumption: stacks must be of the shape (x, y, z)
+#if stacks is 2d, it can be transformed as (x, y, 1)
+max_pooling <- function(stacks, rows, cols)
 {
-  #add padding if image size is not a multiple of pooling size
-
-  #... for number of rows
-  if(dim(input)[1] %% rows != 0)
-  {
-    difference <- dim(input)[1] %% rows
-    padding <- matrix(0, ncol=dim(input)[2], nrow=difference)
-    input <- rbind(input, padding)
-  }
-  
-  #... for number of columns
-  if(dim(input)[2] %% cols != 0)
-  {
-    difference <- dim(input)[2] %% cols
-    padding <- matrix(0, nrow=dim(input)[1], ncol=difference)
-    input <- cbind(input, padding)
-  }
-  
+  depth = dim(stacks)[3]
+  width <- dim(stacks)[2]
+  height <- dim(stacks)[1]
   
   #strides which the max pooling takes to move along x-axis and y-axis
   stride_x <- rows
   stride_y <- cols
   
-  #steps which the max pooling takes to move along x-axis
-  x_steps <- dim(input)[1] / rows
+  #steps which the max pooling takes to move along x-axis, and x_steps = ncol(output)
+  x_steps <- ceiling(width / cols)
   
-  #steps which the max pooling takes to move along y-axis
-  y_steps <- dim(input)[2] / cols
+  #steps which the max pooling takes to move along y-axis, and y_steps = nrow(output)
+  y_steps <- ceiling(height / rows)
   
   #output returned by the max pooling function
-  output <- matrix(0, nrow=x_steps, ncol=y_steps)
+  output <- array(0, dim=c(y_steps, x_steps, depth))
   
-  #initial position in the output matrix, which is (0, 0)
-  x <- 1
-  y <- 1
-  
-  for(i in seq(x_steps))
+  for(z in seq(depth))
   {
+    #initial position in the output matrix, which is (0, 0)
+    x <- 1
+    y <- 1
+    
     for(j in seq(y_steps))
     {
-      #matrix position x from input, as to where to crop the input
-      pos_x <- 1 + stride_x*(j-1)
-      
-      #matrix position y from input, as to where to crop the input
-      pos_y <- 1 + stride_y*(i-1)
-
-      output[y,x] <- max(input[pos_y:(pos_y+stride_y-1), pos_x:(pos_x+stride_x-1)])
-      x <- x + 1
+      for(i in seq(x_steps))
+      {
+        output[j,i,z] <- max(stacks[x:min((x+stride_x-1),height), y:min((y+stride_y-1), width), z])
+        y <- y + stride_y
+      }
+      y <- 1
+      x <- x + stride_x
     }
-    y <- y + 1
-    x <- 1
   }
   
-  #return the output
+  #return the stacks
   output
 }
 
 #testing
-input <- matrix(round(runif(20, min=0, max=10)), nrow=4, ncol=5)
-max_pooling <- matrix(0, nrow=2, ncol=2)
-output <- maxPooling(input, 2, 2)
+stacks <- array(round(runif(70, min=0, max=10)), dim=c(7,5,2))
+output <- max_pooling(stacks, 3, 3)

@@ -1,12 +1,12 @@
 library(keras)
 
-source("~/Documents/workspace/machine-learning-for-human-vision-and-language/lab-assignment-1/source-code/convolution.R")
+source("~/Documents/workspace/machine-learning-for-human-vision-and-language/lab-assignment-1/source-code/convolution_layer.R")
+source("~/Documents/workspace/machine-learning-for-human-vision-and-language/lab-assignment-1/source-code/relu.R")
 source("~/Documents/workspace/machine-learning-for-human-vision-and-language/lab-assignment-1/source-code/max_pooling.R")
 source("~/Documents/workspace/machine-learning-for-human-vision-and-language/lab-assignment-1/source-code/normalisation.R")
-source("~/Documents/workspace/machine-learning-for-human-vision-and-language/lab-assignment-1/source-code/relu.R")
-source("~/Documents/workspace/machine-learning-for-human-vision-and-language/lab-assignment-1/source-code/softmax.R")
 source("~/Documents/workspace/machine-learning-for-human-vision-and-language/lab-assignment-1/source-code/flatten.R")
 source("~/Documents/workspace/machine-learning-for-human-vision-and-language/lab-assignment-1/source-code/dense_layer.R")
+source("~/Documents/workspace/machine-learning-for-human-vision-and-language/lab-assignment-1/source-code/softmax.R")
 
 # import the dataset
 mnist <- dataset_mnist()
@@ -24,58 +24,49 @@ x_test <- x_test / 255
 y_train <- to_categorical(y_train, 10)
 y_test <- to_categorical(y_test, 10)
 
-mnist_filters <- array(round(runif(18, min=-3, max=3)),c(3,3,2))
-
-layer_core <- function(filters, input, withMaxPooling) {
+deep_layer <- function(input, filter, bias_vector, with_max_pooling) {
   
-  #convolutional layer
-  featuremaps <- convolutionOperation(filters, input)
-  featuremaps <- relu(featuremaps)
+  stacks <- convolution_layer(input, filter, bias_vector)
+  stacks <- relu(stacks)
   
-  if (withMaxPooling){
-    stacks <- array(0, dim=c(ceiling(dim(featuremaps)[1]/2), ceiling(dim(featuremaps)[2]/2), dim(featuremaps)[3]))
+  if (with_max_pooling){
+    output <- array(0, dim=c(ceiling(dim(stacks)[1]/2), ceiling(dim(stacks)[2]/2), dim(stacks)[3]))
+    output <- max_pooling(stacks, 2, 2)
   }
   else {
-    stacks <- array(0, dim=c(dim(featuremaps)[1], dim(featuremaps)[2], dim(featuremaps)[3]))
+    output <- stacks
   }
   
-  # max pooling + normaliztion
-  for(i in seq(dim(featuremaps)[3])) {
-    
-    featuremap <- featuremaps[,,i]
-    
-    if(withMaxPooling) {
-      featuremap <- maxPooling(featuremap, 2, 2)
-    }
-
-    stacks[,,i] <- normalisation(featuremap)
-  }
+  output <- normalisation(output)
   
-  #output
-  stacks
+  #return the output
+  output
 }
 
-forward_propagation <- function(filter1, filter2, weight_matrix, input, units) {
-  intermediate_output <- layer_core(filter1, input, TRUE)
-  layer_core_output <- layer_core(filter2, intermediate_output, FALSE)
+forward_propagation <- function(input, filter_1, filter_2, weight_matrix, bias_vector_1, bias_vector_2, bias_vector_3, units) {
+  deep_1 <- deep_layer(input, filter_1, bias_vector_1, TRUE)
+  deep_2 <- deep_layer(deep_1, filter_2, bias_vector_2, FALSE)
   
-  flatten_output <- flatten(layer_core_output)
-  dense_output <- denseLayer(flatten_output, units, weight_matrix)
-  softmax_output <- softmax(dense_output)
+  flatten_1 <- flatten(deep_2)
+  dense_1 <- dense_layer(flatten_1, units, weight_matrix, bias_vector_3)
+  softmax_1 <- softmax(dense_1)
   
   #output
-  softmax_output
+  softmax_1
 }
-
 
 #testing
-mnist_image <- x_train[1,,,]
-mnist_image <- array_reshape(mnist_image, c(28, 28, 1))
-mnist_filter_1 <- array(round(runif(18, min=-3, max=3)), c(3,3,1,2))
-mnist_filter_2 <- array(round(runif(18, min=-3, max=3)), c(3,3,2,2))
-units = 10
-input_count = ceiling((dim(mnist_image)[1]-2)/2 - 2) * ceiling((dim(mnist_image)[2]-2)/2 - 2) * 2
-weight_matrix <- matrix(runif(input_count * units), nrow=input_count, ncol=units)
+input <- x_train[1,,,]
+input <- array_reshape(mnist_image, c(28, 28, 1))
+filter_1 <- array(round(runif(18, min=-3, max=3)), c(3,3,1,2))
+filter_2 <- array(round(runif(18, min=-3, max=3)), c(3,3,2,2))
+units <- 10
+bias_vector_1 <- rep(0, dim(filter_1)[4])
+bias_vector_2 <- rep(0, dim(filter_2)[4])
+bias_vector_3 <- rep(0, units)
 
-output <- forward_propagation(mnist_filter_1, mnist_filter_2, weight_matrix, mnist_image, 10)
+count = ceiling((dim(input)[1]-2)/2 - 2) * ceiling((dim(input)[2]-2)/2 - 2) * 2
+weight_matrix <- matrix(runif(count * units), nrow=count, ncol=units)
+
+output <- forward_propagation(input, filter_1, filter_2, weight_matrix, bias_vector_1, bias_vector_2, bias_vector_3, units)
 

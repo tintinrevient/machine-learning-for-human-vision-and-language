@@ -1,3 +1,4 @@
+#assumption: input must be a sequence, a.k.a, 1-dimensional vector
 softmax <- function(input)
 {
   #length of input

@@ -81,6 +81,14 @@ Finally -3 will be passed to the feature map in the matrix position (1,1):
 [3,]    0    0    0
 ```
 
+### Convolution Operation for Multi-Color Channels
+
+Things to pay attention to are as below:
+
+* When RGB image is used as input to CNN, the depth of filter (or kernel) is always equal to depth of image (so in case of RGB, that is 3). So, If 32x32x3 is the input image, the filter has to be NxNx3 (where N is height and width of filter like 3x3x3).
+
+![multi-color-channel](./pix/multi-color-channel.png)
+
 ### How to debug in RStudio
 
 Step 1: Move the curser to the line in the source code, and choose "Debug" -> "Toggle Breakpoint"
@@ -99,3 +107,4 @@ You can proceed line by line by clicking "Next" button at the top of the console
 * https://www.statmethods.net/advstats/matrix.html
 * http://www.cookbook-r.com/Numbers/Generating_random_numbers/
 * https://keras.io/layers/core/
+* https://cs231n.github.io/convolutional-networks/

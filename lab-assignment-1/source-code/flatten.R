@@ -1,9 +1,7 @@
+#assumption: input must be of the shape (x, y, z)
+#if input is 2d, it can be transformed as (x, y, 1)
 flatten <- function(stacks)
 {
-  #pre-process the input to ensure it is of the shape (x, y, z)
-  if(length(dim(stacks)) != 3)
-    stop("Input should be of the shape (x, y, z)")
-  
   height <- dim(stacks)[1]
   width <- dim(stacks)[2]
   depth <- dim(stacks)[3]
