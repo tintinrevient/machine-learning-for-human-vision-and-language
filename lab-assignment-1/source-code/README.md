@@ -85,7 +85,7 @@ Finally -3 will be passed to the feature map in the matrix position (1,1):
 
 Things to pay attention to are as below:
 
-* When RGB image is used as input to CNN, the depth of filter (or kernel) is always equal to depth of image (so in case of RGB, that is 3). So, If 32x32x3 is the input image, the filter has to be NxNx3 (where N is height and width of filter like 3x3x3).
+When RGB image is used as input to CNN, the depth of filter (or kernel) is always equal to depth of image (so in case of RGB, that is 3). So, If 32x32x3 is the input image, the filter has to be NxNx3 (where N is height and width of filter like 3x3x3).
 
 ![multi-color-channel](./pix/multi-color-channel.png)
 
