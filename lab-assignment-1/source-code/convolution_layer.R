@@ -47,7 +47,15 @@ convolution_layer <- function(input, filter, bias_vector)
 }
 
 #testing
+#test_input is of the shape (4, 4, 3)
 test_input <- array(round(runif(36, min=-3, max=3)), c(4, 4, 3))
+
+#test_filter is of the shape (3, 3, 3, 2)
+#its third dimension 3 is equal to the depth of the test_input
+#its fourth dimension 2 is the number of the units of filters
 test_filter <- array(round(runif(54, min=-1, max=1)),c(3, 3, 3, 2))
+
+#length of the test_bias_vector is 2, which is equal to test_filter's number of units
 test_bias_vector <- rep(0, 2)
-output <- convolution(test_input, test_filter)
+
+output <- convolution_layer(test_input, test_filter, test_bias_vector)
