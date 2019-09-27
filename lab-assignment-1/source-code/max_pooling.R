@@ -42,5 +42,5 @@ max_pooling <- function(stacks, rows, cols)
 }
 
 #testing
-stacks <- array(round(runif(70, min=0, max=10)), dim=c(7,5,2))
-output <- max_pooling(stacks, 3, 3)
+#stacks <- array(round(runif(70, min=0, max=10)), dim=c(7,5,2))
+#output <- max_pooling(stacks, 3, 3)

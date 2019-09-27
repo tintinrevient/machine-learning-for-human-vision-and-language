@@ -18,5 +18,5 @@ relu <- function(stacks)
 }
 
 #test
-stacks <- array(round(runif(18,min=-10,max=10)), dim=c(3, 3, 2))
-output <- relu(stacks)
+#stacks <- array(round(runif(18,min=-10,max=10)), dim=c(3, 3, 2))
+#output <- relu(stacks)

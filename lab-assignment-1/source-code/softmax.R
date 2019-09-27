@@ -18,6 +18,6 @@ softmax <- function(input)
 }
 
 #testing
-input <- c(2,1,0.1)
-output <- softmax(input)
-sum <- sum(output)
+#input <- c(2,1,0.1)
+#output <- softmax(input)
+#sum <- sum(output)

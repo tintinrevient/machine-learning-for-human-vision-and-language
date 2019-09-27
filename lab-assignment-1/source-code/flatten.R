@@ -29,5 +29,5 @@ flatten <- function(stacks)
 }
 
 #testing
-stacks <- array(round(runif(24,min=0,max=10)), c(2,3,4))
-output <- flatten(stacks)
+#stacks <- array(round(runif(24,min=0,max=10)), c(2,3,4))
+#output <- flatten(stacks)

@@ -16,10 +16,10 @@ dense_layer <- function(input, units, weight_matrix, bias_vector)
 }
 
 #testing
-input <- c(round(runif(10, min=1, max=10)))
-units <- 5
-weight_matrix <- matrix(runif(length(input) * units), nrow=length(input), ncol=units)
-bias_vector <- rep(0, units)
+#input <- c(round(runif(10, min=1, max=10)))
+#units <- 5
+#weight_matrix <- matrix(runif(length(input) * units), nrow=length(input), ncol=units)
+#bias_vector <- rep(0, units)
 
-output <- dense_layer(input, units, weight_matrix, bias_vector)
+#output <- dense_layer(input, units, weight_matrix, bias_vector)
 

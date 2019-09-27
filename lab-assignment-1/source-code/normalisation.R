@@ -30,13 +30,13 @@ normalisation <- function(stacks)
 }
 
 #testing
-stacks <- array(c(10,8,-6,-3,10,8,-6,-3), dim=c(2,2,2))
-output <- normalisation(stacks)
+#stacks <- array(c(10,8,-6,-3,10,8,-6,-3), dim=c(2,2,2))
+#output <- normalisation(stacks)
 
 #verify if the mean is 0
-mean <- mean(output[,,1])
-mean <- mean(output[,,2])
+#mean <- mean(output[,,1])
+#mean <- mean(output[,,2])
 
 #verify if the standard deviation is 1
-sd <- sd(output[,,1])
-sd <- sd(output[,,2])
+#sd <- sd(output[,,1])
+#sd <- sd(output[,,2])

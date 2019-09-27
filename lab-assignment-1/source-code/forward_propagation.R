@@ -45,7 +45,7 @@ deep_layer <- function(input, filter, bias_vector, with_max_pooling) {
 
 forward_propagation <- function(input, filter_1, filter_2, weight_matrix, bias_vector_1, bias_vector_2, bias_vector_3, units) {
   deep_1 <- deep_layer(input, filter_1, bias_vector_1, TRUE)
-  deep_2 <- deep_layer(deep_1, filter_2, bias_vector_2, FALSE)
+  deep_2 <- deep_layer(deep_1, filter_2, bias_vector_2, TRUE)
   
   flatten_1 <- flatten(deep_2)
   dense_1 <- dense_layer(flatten_1, units, weight_matrix, bias_vector_3)
@@ -56,17 +56,44 @@ forward_propagation <- function(input, filter_1, filter_2, weight_matrix, bias_v
 }
 
 #testing
-input <- x_train[1,,,]
-input <- array_reshape(mnist_image, c(28, 28, 1))
-filter_1 <- array(round(runif(18, min=-3, max=3)), c(3,3,1,2))
-filter_2 <- array(round(runif(18, min=-3, max=3)), c(3,3,2,2))
-units <- 10
-bias_vector_1 <- rep(0, dim(filter_1)[4])
-bias_vector_2 <- rep(0, dim(filter_2)[4])
-bias_vector_3 <- rep(0, units)
+#input <- x_train[1,,,]
+#input_depth <- 1
+#input <- array_reshape(mnist_image, c(28, 28, input_depth))
 
-count = ceiling((dim(input)[1]-2)/2 - 2) * ceiling((dim(input)[2]-2)/2 - 2) * 2
-weight_matrix <- matrix(runif(count * units), nrow=count, ncol=units)
+#The 3rd dimension of filter_1 should be equal to the 3rd dimension of input
+#The 4th dimension of filter_1 is the number of units, which decides the 3rd dimension of its output
+#filter_1_units <- 2
+#filter_1 <- array(round(runif(18, min=-3, max=3)), c(3,3,input_depth,filter_1_units))
 
-output <- forward_propagation(input, filter_1, filter_2, weight_matrix, bias_vector_1, bias_vector_2, bias_vector_3, units)
+#The 3rd dimension of filter_2 should be equal to the 4th dimension of filter_1
+#The 4th dimension of filter_2 is the number of units, which decides the 3rd dimension of its output
+#filter_2_units <- 2
+#filter_2 <- array(round(runif(18, min=-3, max=3)), c(3,3,filter_1_units,filter_2_units))
 
+#input * filter_1 + bias_vector_1 = output of deep_1
+#bias_vector_1 <- rep(0, dim(filter_1)[4])
+
+#output of deep_1 * filter_2 + bias_vector_2 = output of deep_2
+#bias_vector_2 <- rep(0, dim(filter_2)[4])
+
+#final output is the distribution over 10 digits
+#num_of_categories <- 10
+#bias_vector_3 <- rep(0, num_of_categories)
+
+#If deep_2's max pooling is FALSE:
+#step 1: dim(input)[1]-2 = output of convolution_layer
+#step 2: output of convolution_layer/2 = output of max pooling
+#step 3: output of max pooling-2 = output of convolution_layer
+#step 4: the number of all the weights after the deep_2 = width * height * filter_2_units
+#height = ceiling((dim(input)[1]-2)/2 - 2)
+#width = ceiling((dim(input)[2]-2)/2 - 2)
+#weight_matrix_row_count = ceiling((dim(input)[1]-2)/2 - 2) * ceiling((dim(input)[2]-2)/2 - 2) * filter_2_units
+
+#If deep_2's max pooling is TRUE:
+#there is one more max pooling layer after step 3: output of convolution_layer/2 = final result
+#weight_matrix_row_count = ceiling(((dim(input)[1]-2)/2 - 2)/2) * ceiling(((dim(input)[2]-2)/2 - 2)/2) * filter_2_units
+
+#nrow = the number of all the weights after the deep_2 and flatten_1 = width * height * filter_2_units
+#weight_matrix <- matrix(runif(weight_matrix_row_count * num_of_categories), nrow=weight_matrix_row_count, ncol=num_of_categories)
+
+#output <- forward_propagation(input, filter_1, filter_2, weight_matrix, bias_vector_1, bias_vector_2, bias_vector_3, units)
