@@ -317,7 +317,6 @@ relu <- function(stacks)
 #test
 #stacks <- array(round(runif(18,min=-10,max=10)), dim=c(3, 3, 2))
 #output <- relu(stacks)
-© 2019 GitHub, Inc.
 ```
 
 #### Question 27: Write a simple function that achieves max pooling. This should allow you to specify the spatial extent of the pooling, with the size of the output feature map changing accordingly. Give your code as the answer.
