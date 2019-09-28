@@ -181,25 +181,19 @@ The contributing factors are as below:
 
 #### Question 22: Read the research paper “Performance-optimized hierarchical models predict neural responses in higher visual cortex”, available from: [http://www.pnas.org/content/pnas/111/23/8619.full.pdf](http://www.pnas.org/content/pnas/111/23/8619.full.pdf). Write a short (~500 word) summary of the experimental approach and results.
 
-This experiment compares the object recognition abilities between inferior temporal (IT) cortex and hierarchical neural network models.
+Humans can recognise objects despite drastic variation in the retinal image (due to lighting, position, angle, etc.). The processing of visual information that underlies this ability is performed in the ventral visual stream. This collection of brain areas can be seen as a series of processing stages, that represent visual information in increasingly more abstract ways. The lowest area, the V1, is most directly based on the retinal image and can be modelled with high accuracy. Modelling higher areas has proven more difficult. The aim of this study is to model the IT, the highest ventral cortical area.
 
-For the approach, it prepares at first the benchmark testing image set, which consists of images drawn from eight categories with various object orientation, size and position. The image set comes into three levels of object view variation: low (fixed orientation, size, and position), medium and high (180° rotations on all axes, 2.5× dilation, and full-frame translations).
+The study constructed a large test of objects shown with varying orientations, backgrounds, etc., and gathered neural responses to these images from human participants. To investigate how model performance relates to neural predictivity, the study then tried a large number of convolutional neural networks, and evaluated their ability to recognise objects in the test set, as well as their predictivity of the measured neural activty in IT. These two measures were found to have a positive correlation. When model parameters were optimised for object recognition, this increased their IT predictivity, even when neural data was not used in optimisation.
 
-Then it trains models, which are HMO, IT population, V4 population, HMAX, PLOS09, V2-like and V1-like to be used in the comparison. More specifically, linear classifiers on IT population and V4 population are trained to obtain neural reference points on categorization performance. Besides, it also uses pixel model and SIFT as baseline computer vision models for low-variation tasks. 
+Next, the study used activity in IT and V4 (the highest area before IT) to predict object identity in the dataset and compared it to human performance, as well as the performance of various models. IT activity roughly matches human performance in accuracy, performing well even on test sets with high variation in object orientation, lighting, etc. The predictivity of V4 greatly deteriorates with more variation in the test set. The most robust artificial networks that are tested perform similarly to V4.
 
-At the same time of using the above models to predict the object classification result from the testing image, it also uses multiple electrode arrays to collect responses from IT neurons to each image. 
+The study then optimised and trained a final model for object recognition. This model is more complex than the standard three-layer CNN, using a combination of deeper CNNs with more specialised functions, using HMO to develop the architecture of the network. This model performed similar to the IT neural data in the visual recognition task, even with high variation.
 
-And as a behavioral reference point, the experiment measures human performance on these tasks using web-based crowdsourcing methods.
+The model was further evaluated by measuring its IT predictivity in different layers. Each subsequent layer of the model achieved better predictivity of neural activity in IT, and were increasingly more robust under variation in object pose and position. The highest layer in the model showed very high predictivity of IT compared to existing models.
 
-After the experiment, it gathers object categorization performance results on the test images at three increasing levels of object view variation. The results measure the object recognition performance for IT and V4 neural responses, computational models (e.g., HMO, HMAX, etc...) and humans.
+The model’s predictivity of neural data was further evaluated. Previous comparisons had been to the activity in individual neurons, but the model was also used to predict representations of activity in the entire population. Again, predictivity of the model was high. The model’s second highest layer was also used to predict V4 activity, and was found to perform well at this task. This suggests that the internal structure of the model somewhat mirrors the internal structure of the ventral stream.
 
-The result shows that at all levels of variation, the IT population is consistent with human performance levels. And the V4 population matches IT and human performance at low levels of variation.
-
-For the multi-layer computational models, the top layer's performance complies with human performance at all levels, whereas the lower layers only match human performance at a limited variety of image preferences.
-
-So a resemblance is drawn between IT neural response and HMO's top layer, between V4 neural response and HMO's penultimate layer.
-
-At a result, the experiment demonstrates that performance-optimised hierarchical models predict neural responses in higher visual cortex, and it also indicates that the top-down perspective can complement the bottom-up approach to understand how the visual neurons work, as lower visual cortex might be selected precisely by higher visual cortex to support its computation.
+The experiment demonstrates that performance-optimised hierarchical models predict neural responses in higher visual cortex, and it also indicates that the top-down perspective can complement the bottom-up approach to understand how the visual neurons work, as lower visual cortex might be selected precisely by higher visual cortex to support its computation.
 
 #### Question 23: Play around with these settings and see how they affect your ability to learn classification of different data sets. Write down what you found and how you interpret the effects of these settings.
 
