@@ -277,7 +277,7 @@ where r is the learning rate of the training model. The new value of w, which we
 
 #### Question 33 (BONUS QUESTION): Write a function to achieve backpropagation of error to affect the convolutional filter (kernel) structure used in question 25. Modify your function from question 25 to give the filters used as an output, so you can modify these filters using backpropagation. Initialise the network with random weights in the filters. Give the code for your convolution and backpropagation functions as your answer.
 
-?
+We were a bit confused by the question, because a backpropagation algorithm requires more than a single convolutional filter (you need the entire network). We wrote a backpropagation algorithm for our neural network with 2 hidden layers that we implemented in question 35.
 
 #### Question 35 (BONUS QUESTION): Write a piece of code that uses all of these functions (Questions 25-33) together to make a convolutional neural network with two convolutional layers, a fully connected layer, and an output layer (pooling is optional, but thresholding and normalisation are required). This should give the accuracy of the labels as an output. Give your code as your answer. 
 
