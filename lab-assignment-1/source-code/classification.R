@@ -60,10 +60,3 @@ for(x in seq(cycles))
   parameters <- newparameters
   
 }
-
-
-
-
-
-
-
