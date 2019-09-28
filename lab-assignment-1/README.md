@@ -277,4 +277,7 @@ The source code is in this [link](./source-code/forward_propagation.R).
 
 #### Question 36 (BONUS QUESTION): Use the resulting function to learn to classify the mnist data set, as you did in question 11. Plot the progression of the classification accuracy over 100 cycles.
 
-?
+We created the model, and wrote a loop that adapts the model using stochastic gradient descent. However, it takes a long time to evaluate a single mnist image, so we only evaluated 10 images.
+The loss over the 10 images is plotted below:
+
+The source code is in this link.
