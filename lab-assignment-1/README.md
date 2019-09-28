@@ -1,5 +1,6 @@
 ## Lab assignment 1
 
+### Luka van der Plas (4119142) & Shu Zhao (6833519)
 
 #### Question 1: Can you think of another application where automatic recognition of hand-written numbers would be useful?
 
