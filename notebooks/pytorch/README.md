@@ -10,6 +10,7 @@ import torch
 points = torch.tensor([[5, 7, 4], [1, 3, 2], [7, 3, 8]])
 
 points.storage()
+points.is_contiguous()
 points.stride()
 points.shape
 points.dtype
@@ -19,10 +20,16 @@ points_transpose = points.t()
 points_transpose = points.transpose(0, 1)
 
 points_transpose.storage()
+points_transpose.is_contiguous()
 points_transpose.stride()
 points_transpose.shape
 
 id(points.storage()) == id(points_transpose.storage()) # the storage is the same, only the view is changed
+
+points_transpose_contiguous = points_transpose.contiguous()
+points_transpose_contiguous.is_contiguous()
+id(points.storage()) == id(points_transpose_contiguous.storage()) # the storage is the same
+points.is_contiguous()
 ```
 
 ### Numeric Types
