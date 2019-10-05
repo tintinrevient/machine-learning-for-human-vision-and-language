@@ -59,3 +59,4 @@ convolution_layer <- function(input, filter, bias_vector)
 #test_bias_vector <- rep(0, 2)
 
 #output <- convolution_layer(test_input, test_filter, test_bias_vector)
+#output <- convolution_layer(test_input, test_filter, test_bias_vector)

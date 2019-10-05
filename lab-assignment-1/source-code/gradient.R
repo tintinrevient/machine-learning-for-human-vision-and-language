@@ -27,7 +27,7 @@ mean_square_error <- function(batch_of_targets, batch_of_outputs)
   sum(result)/length(result)
 }
 
-convolution_layer_gradient_descent <- function()
+convolution_layer_gradient_descent <- function(input, filter_1, filter_2, weight_matrix, bias_vector_1, bias_vector_2, bias_vector_3, num_of_categories)
 {
   loss_function()
 }
