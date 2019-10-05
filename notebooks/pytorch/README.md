@@ -45,7 +45,7 @@ The numeric types are as below:
 * torch.int64 = torch.long
 * torch.bool -> torch.BoolTensor
 
-The allocation of a tensor with the right umeric type:
+The allocation of a tensor with the right numeric type:
 ```
 import torch
 
