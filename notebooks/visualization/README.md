@@ -4,7 +4,7 @@
 
 The source code is in this link: [convnet_output](./source-code/convnet_output.R)
 
-input image vs. output feature map from layer 1 and channel 2
+Left: input image vs. Right: output feature map from layer 1 and channel 2
 <p float="left">
   <img src="./pix/input.png" width="400" />
   <img src="./pix/output.png" width="400" /> 
