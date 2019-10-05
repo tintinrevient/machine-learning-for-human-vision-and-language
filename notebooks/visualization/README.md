@@ -4,7 +4,11 @@
 
 The source code is in this link: [convnet_output](./source-code/convnet_output.R)
 
-![input](./pix/input.png "input image") ![output](./pix/output.png "output feature map from layer 1 and channel 2")
+input image vs. output feature map from layer 1 and channel 2
+<p float="left">
+  <img src="./pix/input.png" width="100" />
+  <img src="./pix/output.png" width="100" /> 
+</p>
 
 ### Visualize the filter from each layer
 
