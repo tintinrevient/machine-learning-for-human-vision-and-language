@@ -24,4 +24,6 @@ The feature with which the layer "block3_conv1" and its filter 1 deals is as bel
 The source code is in this link: [heatmap](./source-code/heatmap.R)
 
 The heatmap is as below:
-![heatmap](./pix/heatmap.png)
+<p float="left">
+  <img src="./pix/heatmap.png" width="600" />
+</p>
