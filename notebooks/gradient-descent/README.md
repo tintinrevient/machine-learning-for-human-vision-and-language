@@ -8,5 +8,7 @@
 
 ![loss](./pix/loss.png)
 
+### Gradient
 
+gradient is a vector of derivatives, where the individual derivative of error-squared loss is computed with respect to each parameter.
 
