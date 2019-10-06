@@ -58,3 +58,48 @@ float_tensor = torch.ones(10, 2)
 double_tensor = float_tensor.type(torch.double)
 ```
 
+### NumPy Interoperability
+
+The returned NumPy arrays share the same buffer with the tensor storage in CPU RAM and vice versa.
+```
+import torch
+
+array_tensor = torch.ones(3, 4)
+array_numpy = array_tensor.numpy()
+
+new_array_tensor = torch.from_numpy(array_numpy)
+```
+
+### Serialization
+
+PyTorch uses pickle to serialize the tensor object.
+```
+import torch
+
+points = torch.tensor([[5, 7, 4], [1, 3, 2], [7, 3, 8]])
+
+torch.save(points, '../data/points.t')
+loaded_points = torch.load('../data/points.t')
+
+with open('../data/points.t', 'wb') as file:
+  torch.save(points, file)
+  
+with open('../data/points.t', 'rb') as file:
+  loaded_points = torch.load(file)
+```
+
+HDF5 is a portable format to store serialized multi-dimensional arrays in a key-value dictionary.
+```
+import torch
+import h5py
+
+file = h5py.File('../data/points.hdf5', 'w')
+file.create_dataset('key', data=points.numpy())
+file.close()
+
+file = h5py.File('../data/points.hdf5', 'r')
+dataset = file['key']
+last_row = dataset[-1:]
+tensor_last_row = torch.from_numpy(last_row)
+file.close()
+```
