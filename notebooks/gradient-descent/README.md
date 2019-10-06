@@ -14,3 +14,29 @@ gradient is a vector of derivatives, where the individual derivative of error-sq
 
 ![gradient](./pix/gradient.png)
 
+### Neuron
+
+neuron is a linear transformation of the input (w * x + b) followed by a non-linear activation function.
+
+![neuron](./pix/neuron.png)
+
+### Neuron Network
+
+an output of a layer of neurons is used as an input for the next layer of neurons.
+
+![neuron-network](./pix/neuron-network.png)
+
+### Activation
+
+* non-linear
+* differentiable
+* at least 1 sensitive range and saturated range
+
+![activation](./pix/activation.png)
+
+### 4 Neurons with 1 Layer and 2 Layers
+
+![non-linear](./pix/non-linear.png)
+
+
+
