@@ -6,14 +6,18 @@
 ![overview](./pix/overview.png)
 
 ### Ambiguity
-* **words**: multiple meanings, e.g. bank
+* **words**: 
+	* multiple meanings: bank (financial institution or river bank?)
+	* vague meanings: a small elephant > a big rabbit
 * **part of speech**: chair (verb or noun?), can (auxiliary verb or noun?)
 * **syntax**: you saw a man with a telescope.
 ![syntax-ambiguity](./pix/syntax-ambiguity.png)
 
 * **semantics**: 
 	* **quantifier**: some, all, many, a, one, etc...
-	* **quantifier scope**: the company sent a new battery to every car owner (how many batteries?), the company sent a doctor to treat every employee affected by the accident (how many doctors?).
+	* **quantifier scope**: 
+		* the company sent a new battery to every car owner (how many batteries?)
+		* the company sent a doctor to treat every employee affected by the accident (how many doctors?).
 
 ### Challenge
 * **variability**: did Google buy YouTube?
