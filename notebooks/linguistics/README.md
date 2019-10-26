@@ -58,9 +58,11 @@ P(w<sub>1</sub><sup>n</sup>) = P(w1) P(w2|w1) P(w3|w1,w2) ... P(wn|w1 ...wn−1)
 
 ### Language model
 
-* **uni-gram** model (**bag of words**): each word is independent of the others in the sentence, e.g. P(three guys are standing on the sidewalk) = P(sidewalk the three are on guys standing)
+* **uni-gram** model (**bag of words**): each word is independent of the others in the sentence.
+	* P(three guys are standing on the sidewalk) = P(sidewalk the three are on guys standing)
 * **bi-gram** model: each word is independent of all but the previous word.
-* **tri-gram** model: each word is independent of all but the previous two words, e.g. P(sidewalk|three guys are standing on the) = P(sidewalk|on the) = P(see the small dog on the)
+* **tri-gram** model: each word is independent of all but the previous two words.
+	* P(sidewalk|three guys are standing on the) = P(sidewalk|on the) = P(sidewalk|see the small dog on the)
 
 
 
