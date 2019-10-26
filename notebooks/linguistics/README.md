@@ -36,7 +36,9 @@
 		* k: a constant
 		* logf = logk − logr  
 
-![word-frequencies](./pix/word-frequencies.png)
+<p float="left">
+  <img src="./pix/word-frequencies.png" width="600" />
+</p>
 
 ### Probability of a sentence
 
