@@ -46,10 +46,10 @@
 
 **chain rule** is used to decompose the probability of a sentence:
 
-P(w1<sup>n</sup>) = P(w1) P(w2|w1) P(w3|w1,w2) ... P(wn|w1 ...wn−1)
-* history of size 2: P(w1<sup>n</sup>) ≈ P(w1) P(w2|w1) P(w3|w1, w2) ... P(wn|wn−2, wn−1)
-* history of size 1: P(w1<sup>n</sup>) ≈ P(w1) P(w2|w1) P(w3|w2) ... P(wn|wn−1)
-* history of size 0: P(w1<sup>n</sup>) ≈ P(w1) P(w2) P(w3) ... P(wn)
+P(w<sup>1</sup><sup>n</sup>) = P(w1) P(w2|w1) P(w3|w1,w2) ... P(wn|w1 ...wn−1)
+* history of size 2: P(w<sup>1</sup><sup>n</sup>) ≈ P(w1) P(w2|w1) P(w3|w1, w2) ... P(wn|wn−2, wn−1)
+* history of size 1: P(w<sup>1</sup><sup>n</sup>) ≈ P(w1) P(w2|w1) P(w3|w2) ... P(wn|wn−1)
+* history of size 0: P(w<sup>1</sup><sup>n</sup>) ≈ P(w1) P(w2) P(w3) ... P(wn)
 
 **maximum likelihood estimation (MLE)**
 * hisotry of size 2: P(wi|wi−2,wi−1) = count(wi−2,wi−1,wi) / count(wi−2 ,wi−1)
