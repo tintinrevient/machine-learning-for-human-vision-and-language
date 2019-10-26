@@ -1,8 +1,8 @@
 ## Linguistics
 
 ###  Syntax & Semantics
-* **syntax**: structural relationship between words & phrases (modelling sequence: RNN)
-* **semantics**: **lexical semantics** (distributional/vector based: word embedding) & **compositional semantics**
+* **syntax**: structural relationship between words and phrases (modelling sequence: RNN)
+* **semantics**: **lexical semantics** (distributional/vector based: word embedding) and **compositional semantics**
 ![overview](./pix/overview.png)
 
 ### Ambiguity
