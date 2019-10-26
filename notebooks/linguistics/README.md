@@ -35,6 +35,7 @@
 		* r: rank of a word
 		* k: a constant
 		* logf = logk − logr  
+
 ![word-frequencies](./pix/word-frequencies.png)
 
 ### Probability of a sentence
