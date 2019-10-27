@@ -51,7 +51,7 @@ ambiguity in different languages:
 ### Computation
 
 * a sentence w<sub>1</sub><sup>n</sup> is a sequence of n words: (w1 w2 ... wn).
-* POS tags for the sentence t<sub>1</sub><<sup>n</sup> is a sequence of n tags: (t1 t2 ... tn).
+* POS tags for the sentence t<sub>1</sub><sup>n</sup> is a sequence of n tags: (t1 t2 ... tn).
 
 **goal** - **most probable** tag sequence:
 
