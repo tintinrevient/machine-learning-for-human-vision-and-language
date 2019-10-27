@@ -2,7 +2,7 @@
 
 Supertagging is based on **"strongly lexicalised"** grammar.
 
-CCG (Combinatory Categorial Grammar)** is a strongly lexicalised grammar.
+**CCG (Combinatory Categorial Grammar)** is a strongly lexicalised grammar.
 
 for each word, there is:
 * **lexical categories**
