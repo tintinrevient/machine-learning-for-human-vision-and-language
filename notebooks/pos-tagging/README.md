@@ -68,7 +68,7 @@ ambiguity in different languages:
 **step 2** - ignore the denominator:
 
 * P(t<sub>1</sub><sup>n</sup>): **prior term**.
-* P(w<sub>1</sub><sup>n</sup>|t<sub>1</sub><<sup>n</sup>): **likelihood term**.
+* P(w<sub>1</sub><sup>n</sup>|t<sub>1</sub><sup>n</sup>): **likelihood term**.
 
 <p float="left">
 	<img src="./pix/ignore-denominator.png" width="490" />
