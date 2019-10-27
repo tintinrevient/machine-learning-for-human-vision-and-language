@@ -44,11 +44,13 @@ ambiguity in different languages:
 * P(B|A) is a conditional probability: the likelihood of event B occurring given that event A is true.
 * P(A) and P(B) are the probabilities: the likelihood of event A and event B occurring independently of each other.
 
-![bayes-theorem](./pix/bayes-theorem.png)
+<p float="left">
+	<img src="./pix/bayes-theorem.png" width="600" />
+</p>
 
 ### Computation
 
-* a sentence w<sub>1</sub><<sup>n</sup> is a sequence of n words: (w1 w2 ... wn).
+* a sentence w<sub>1</sub><sup>n</sup> is a sequence of n words: (w1 w2 ... wn).
 * POS tags for the sentence t<sub>1</sub><<sup>n</sup> is a sequence of n tags: (t1 t2 ... tn).
 
 **goal** - **most probable** tag sequence:
