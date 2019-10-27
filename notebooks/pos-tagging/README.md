@@ -150,7 +150,7 @@ the equation in a HMM:
 	<img src="./pix/viterbi.png" width="580" />
 </p>
 
-example of Viterbi
+example of Viterbi:
 * matrix of transition probability A: 2 x 2, N = {q1, q2}
 * matrix of emission probability B: 2 x 3, V = {x, y, z}
 * the word sequence (o1 o2 o3), that is (x z y)
