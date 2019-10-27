@@ -23,6 +23,6 @@ for each word, there is:
 <img src="./pix/rule-2.png" width="430" />
 <img src="./pix/rule-3.png" width="430" />
 
-examples of CCG derivation
+examples of CCG derivation:
 ![supertagging-derivation-1](./pix/supertagging-derivation-1.png)
 ![supertagging-derivation-2](./pix/supertagging-derivation-2.png)
