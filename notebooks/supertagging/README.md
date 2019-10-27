@@ -19,11 +19,9 @@ for each word, there is:
 	* **type raising (T)**
 	* **forward composition (B)**
 
-<p float="left">
-	<img src="./pix/rule-1.png" width="430" />
-	<img src="./pix/rule-2.png" width="430" />
-	<img src="./pix/rule-3.png" width="430" />
-</p>
+<img src="./pix/rule-1.png" width="430" />
+<img src="./pix/rule-2.png" width="430" />
+<img src="./pix/rule-3.png" width="430" />
 
 examples of CCG derivation
 ![supertagging-derivation-1](./pix/supertagging-derivation-1.png)
