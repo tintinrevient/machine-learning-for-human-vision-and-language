@@ -87,7 +87,7 @@ GloVe visualization:
 	* cat - dog are similar (substitutable in many contexts)
 
 * **relatedness**: 
-* cat - purr are related (occur in the same contexts)
+	* cat - purr are related (occur in the same contexts)
 ![relatedness](./pix/relatedness.png)
 
 * **analogy**: a is to b as c is to d.
